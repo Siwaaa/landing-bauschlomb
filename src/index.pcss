@@ -1,0 +1,54 @@
+@import "./font.css";
+@import "./reset.css";
+@import "./blocks/**/*.pcss";
+
+html {
+  font-family: 'Mont', sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 16px;
+
+  @media (--sm) {
+    font-size: 14px;
+  }
+}
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: var(--container-padding-w);
+  padding-right: var(--container-padding-w);
+}
+
+:root {
+  /* color */
+  --color-white: #ffffff;
+  --color-black: #3F3F3F;
+  --color-blue: #0FB1BF;
+  /* font  */
+  --fz-btn: 16px;
+  --fz-h2: 32px;
+  /* content */
+  --content-width: 1920px;
+  --container-padding-h: 4%;
+  --container-padding-w: 30px; 
+
+  @media (--2xl) {
+    --fz-h2: 26px;
+  }
+  @media (--xl) {
+    --fz-h2: 22px;
+  }
+  @media (--md) {
+    --fz-btn: 14px;
+    --container-padding-w: 20px;
+  }
+  @media (--sm) {
+    --container-padding-h: 8%;
+    --container-padding-w: 10px;
+  }
+  @media (--xs) {
+    --fz-h2: 20px;
+  }
+}
