@@ -1,0 +1,8 @@
+include ../../components/button.pug
+.nav
+  .nav__content.container
+    .nav__logo 
+      a(href="#") 
+        img(src="./img/logo.svg", alt="Логотип") 
+    .nav__btn 
+      +button('Получить скидку', 'button', 's', 'white', '', './img/right_m.svg')

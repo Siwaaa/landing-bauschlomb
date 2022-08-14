@@ -1,11 +1,11 @@
 doctype html
 html(lang="ru")
   head
-    title Студия Чернозём 
+    title Bausch & Lomb 
 
     link(rel='stylesheet', href='./index.pcss')
 
-    script(src='./index.js' defer type="module")
+    //- script(src='./index.js' defer type="module")
     script(src='./blocks/popup/popup.js' defer type="module")
 
     meta(charset="UTF-8")
@@ -25,10 +25,12 @@ html(lang="ru")
     
   body
     main(id="app")
-      include ./blocks/header/header.pug
+      include ./blocks/nav/nav.pug
 
-      include ./blocks/projects/projects.pug
-      include ./blocks/partners/partners.pug
+      include ./blocks/header/header.pug
+      include ./blocks/quiz/quiz.pug
+      include ./blocks/utp/utp.pug
+      include ./blocks/care/care.pug
 
       include ./blocks/footer/footer.pug
 
