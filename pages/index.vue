@@ -6,17 +6,8 @@
     <UtpBlock />
     <CareBlock />
     <FooterBlock />
+    <MedinfoBlock />
   </main>
-
-  <!--  
-      include ./blocks/quiz/quiz.pug
-      include ./blocks/utp/utp.pug
-      include ./blocks/care/care.pug
-
-      include ./blocks/footer/footer.pug
-
-      include ./blocks/popup/popup.pug -->
-
 </template>
 
 <script>
@@ -26,6 +17,7 @@ import QuizBlock from '@/components/blocks/QuizBlock.vue';
 import UtpBlock from '@/components/blocks/UtpBlock.vue';
 import CareBlock from '@/components/blocks/CareBlock.vue';
 import FooterBlock from '@/components/blocks/FooterBlock.vue';
+import MedinfoBlock from '@/components/blocks/MedinfoBlock.vue';
 
 export default {
   name: "IndexPage",
@@ -35,8 +27,9 @@ export default {
     QuizBlock,
     UtpBlock,
     CareBlock,
-    FooterBlock
-  },
+    FooterBlock,
+    MedinfoBlock
+},
 
 //   import { toggelMenuMobile, closeMenu } from "./blocks/nav/burger.js";
 

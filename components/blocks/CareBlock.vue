@@ -40,6 +40,10 @@ export default {
       text-transform: uppercase;
       color: var(--color-blue);
       margin-bottom: 60px;
+
+      @media (--2xl) {
+        font-size: 80px;
+      }
     }
   }
   &__items {

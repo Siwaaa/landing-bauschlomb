@@ -24,11 +24,11 @@ export default {
   components: {Button}
 }
 </script>
+
 <style lang="postcss">
 .utp {
   &__content {
-    
-    padding-top: var(--container-padding-h);
+    padding-top: calc(var(--container-padding-h) + 20px);
     padding-bottom: var(--container-padding-h);
   }
   &__items {
@@ -47,10 +47,15 @@ export default {
         height: 288px;
         object-fit: contain;
         margin-bottom: 30px;
+
+        @media (--xl) {
+          width: 240px;
+          height: 240px;
+        }
       }
       & > p {
         font-weight: 400;
-        font-size: 23px;
+        font-size: var(--fz);
         line-height: 34px;
       }
     }

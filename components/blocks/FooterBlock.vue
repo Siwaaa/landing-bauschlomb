@@ -50,6 +50,7 @@ export default {
   &__content {
     padding-top: calc(.5*var(--container-padding-h));
     padding-bottom: calc(.5*var(--container-padding-h));
+    margin-bottom: var(--med-h);
   }
   &__social {
     display: flex;

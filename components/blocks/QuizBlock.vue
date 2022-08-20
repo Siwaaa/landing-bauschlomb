@@ -37,6 +37,10 @@ export default {
     height: 1000px;
     padding-top: var(--container-padding-h);
     padding-bottom: var(--container-padding-h);
+
+    @media (--2xl) {
+      height: 800px;
+    }
   }
 }
 
