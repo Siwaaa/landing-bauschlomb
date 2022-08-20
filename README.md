@@ -5,17 +5,20 @@ _Американская компания, известный производ�
 ## Install dep
 
 ```sh
-npm i
+# install dependencies
+$ npm i
 ```
 
 ## Development
 
 ```sh
-npm run serve
+# serve with hot reload at localhost:3000
+$ npm run dev
 ```
 
 ## Build
 
 ```sh
-npm run build
+# start SSR
+$ npm run start
 ```

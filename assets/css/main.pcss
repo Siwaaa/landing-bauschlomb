@@ -1,17 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-@import "./reset.css";
-@import "./blocks/**/*.pcss";
-@import "./components/*.pcss";
 
 html {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--color-white);
   color: var(--color-black);
-  font-size: 16px;
-
-  @media (--sm) {
-    font-size: 14px;
-  }
+  font-size: var(--fz);
 }
 .container {
   width: 100%;
@@ -20,23 +13,38 @@ html {
   margin-left: auto;
   padding-left: var(--container-padding-w);
   padding-right: var(--container-padding-w);
-}
 
+  & > a {
+    color: #0FB1BF;
+  }
+}
+.sub {
+  vertical-align: super;
+  font-size: .7em;
+  margin-right: 2px;
+  margin-left: 2px;
+}
 :root {
   /* color */
   --color-white: #ffffff;
   --color-black: #3F3F3F;
   --color-blue: #0FB1BF;
   /* font  */
-  --fz-btn: 16px;
-  --fz-h2: 32px;
+  --fz-h1: 70px;
+  --fz-h3: 33px;
+  --fz: 23px;
+  --fz-btn: 20px;
+  --fz-btn-small: 14px;
   /* content */
   --content-width: 1500px;
   --container-padding-h: 60px;
-  --container-padding-w: 30px; 
+  --container-padding-w: 30px;
+  --nav-h: 100px; 
 
   @media (--2xl) {
-    --fz-h2: 26px;
+    --fz: 20px;
+    --fz-btn: 18px;
+    --nav-h: 80px; 
   }
   @media (--xl) {
     --fz-h2: 22px;
