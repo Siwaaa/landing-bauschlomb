@@ -8,24 +8,41 @@
               <h3>Дорога без <br> сюрпризов</h3>
             </div>
             <div class="control-panel__desc">
-              <p>Узнайте в каких ситуациях на дороге <strong>PureVision® 2</strong> могут вам помочь. </p>
+              <p>Узнайте в каких ситуациях на дороге <strong>PureVision<sup class="sub">®</sup> 2</strong> могут вам
+                помочь. </p>
             </div>
             <div class="control-panel__btn">
-              <Button title="Где купить" color="blue" imgRight="right_m.svg"/>
+              <Button title="Поехали" color="blue" imgRight="right_m.svg" />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <Modal :visible.sync="quizModal" :type="typeModal"/>
   </section>
 </template>
+
 <script>
 import Button from '@/components/Button.vue';
+import Modal from '@/components/Modal.vue';
+
 export default {
   name: "QuizBlock",
-  components: {Button}
+  components: { Button, Modal },
+  data() {
+    return {
+      quizModal: false,
+      typeModal: 'reg'
+    }
+  },
+  methods: {
+    onModal() {
+      this.quizModal = true
+    }
+  },
 }
 </script>
+
 <style lang="postcss">
 .quiz {
   background: url(@/assets/img/061@2x.jpg) center / cover no-repeat;
@@ -39,7 +56,21 @@ export default {
     padding-bottom: var(--container-padding-h);
 
     @media (--2xl) {
-      height: 800px;
+      min-height: 568px;
+      max-height: 800px;
+      height: 86vh;
+    }
+  }
+
+  &__panel {
+    @media (--sm) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (--xs) {
+      height: 100%;
     }
   }
 }
@@ -57,33 +88,64 @@ export default {
     border-radius: 50%;
     text-align: center;
     overflow: hidden;
+
+    @media (--lg) {
+      width: 420px;
+      height: 420px;
+    }
+
+    @media (--xs) {
+      width: 290px;
+      height: 290px;
+    }
   }
 
   &__head {
-    & > h3 {
+    &>h3 {
       font-weight: 700;
       font-size: var(--fz-h3);
       line-height: 144%;
       text-transform: uppercase;
       color: var(--color-blue);
     }
+
     &::after {
       content: '';
-      display: block;
+      display: inline-block;
       width: 120px;
       height: 2px;
       background-color: var(--color-blue);
       margin-top: 20px;
       margin-bottom: 20px;
+
+      @media (--xs) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
     }
   }
+
   &__desc {
     margin-bottom: 20px;
-    & > p {
+
+    &>p {
       font-weight: 400;
       font-size: 20px;
       line-height: 1.45;
-      & > strong {
+
+      @media (--lg) {
+        font-size: 20px;
+      }
+
+      @media (--sm) {
+        font-size: 18px;
+      }
+
+      @media (--xs) {
+        font-size: 14px;
+      }
+
+      &>strong {
         font-weight: 700;
         color: var(--color-blue);
       }

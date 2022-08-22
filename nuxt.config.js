@@ -54,6 +54,7 @@ export default {
         'postcss-custom-media': {
           importFrom: './assets/css/custom-media.css'
         }
+        // добавить cssnano
       },
       preset: {
         autoprefixer: {

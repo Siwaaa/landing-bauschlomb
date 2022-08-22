@@ -2,15 +2,16 @@
   <section class="header">
     <div class="header__content container">
       <div class="header__info">
-        <h1> PureVision® 2</h1>
+        <h1> PureVision<sup class="sub">®</sup> 2</h1>
         <p>Наверняка вы сталкивались с ситуацией, когда вы ощущали дискомфорт при вождении в условиях плохой видимости
           или в темное время суток. Блики и ореолы вместо четкой картинки — ваши частые спутники на дороге? Линзы
-          PureVision® 2 помогут вам избежать неприятных сюрпризов. </p>
-        <strong>PureVision® 2. Особая форма линз высокой четкости позволяет добиться ясного и четкого зрения без бликов
+          PureVision<sup class="sub">®</sup> 2 помогут вам избежать неприятных сюрпризов. </p>
+        <strong>PureVision<sup class="sub">®</sup> 2. Особая форма линз высокой четкости позволяет добиться ясного и
+          четкого зрения без бликов
           и ореолов, даже в условиях низкой освещенности<sup class="sub">1</sup>.</strong>
         <div class="header__btn">
-          <Button title="Подробнее" color="blue" />
-          <Button title="Где купить" imgRight="right_small.svg" />
+          <Button title="Подробнее" color="blue" @click.native="onModal('reg')"/>
+          <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')"/>
         </div>
       </div>
       <div class="header__swiper">
@@ -36,16 +37,22 @@
             </div>
           </div>
         </div>
+        <div class="header__btn-mobile">
+          <Button title="Подробнее" color="blue" @click.native="onModal('reg')" />
+          <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')" />
+        </div>
       </div>
     </div>
     <div class="header__go">
       <a href="">Поехали</a>
     </div>
+    <Modal :visible.sync="headerModal" :type="typeModal" />
   </section>
 </template>
 
 <script>
 import Button from '@/components/Button.vue';
+import Modal from '@/components/Modal.vue';
 import { Swiper, Thumbs } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
@@ -53,7 +60,20 @@ export default {
   name: 'HeaderBlock',
   components: {
     Button,
-    Swiper
+    Swiper,
+    Modal
+  },
+  data() {
+    return {
+      headerModal: false,
+      typeModal: null
+    }
+  },  
+  methods: {
+    onModal(component) {
+      this.typeModal = component
+      this.headerModal = true
+    }
   },
   mounted() {
     Swiper.use([Thumbs])
@@ -65,6 +85,11 @@ export default {
       speed: 500,
       watchSlidesProgress: true,
       slideToClickedSlide: true,
+      breakpoints: {
+        480: {
+          spaceBetween: 10
+        }
+      },
       on: {
         // fix thumbs problems: https://qna.habr.com/q/1152372
         touchEnd: function (s, e) {
@@ -85,10 +110,6 @@ export default {
         swiper: swiperBottom,
       },
     })
-    // you can use different options later
-    swiper.on('activeIndexChange', (swiper) => {
-      // console.log(swiper)
-    })
   },
 }
 </script>
@@ -100,26 +121,60 @@ export default {
     margin-top: calc(var(--nav-h) + 70px);
     display: flex;
     justify-content: space-between;
+
+    @media (--xl) {
+      margin-top: calc(var(--nav-h) + 35px);
+    }
+
+    @media (--lg) {
+      flex-direction: column;
+    }
+
+    @media (--xs) {
+      margin-top: calc(var(--nav-h) + 15px);
+      margin-bottom: 40px;
+    }
   }
 
   &__info {
     width: 42%;
 
+    @media (--2xl) {
+      width: 46%;
+    }
+
+    @media (--xl) {
+      width: 50%;
+    }
+
+    @media (--lg) {
+      width: 100%;
+    }
+
     &>h1 {
       font-weight: 700;
       font-size: var(--fz-h1);
-      line-height: 85px;
+      line-height: 1.2;
       text-transform: capitalize;
       color: var(--color-blue);
       margin-bottom: 36px;
+
+      @media (--lg) {
+        margin-bottom: 18px;
+      }
     }
 
     &>p {
       width: 90%;
       font-weight: 400;
       font-size: var(--fz);
-      line-height: 34px;
+      line-height: 1.45;
       margin-bottom: 36px;
+
+      @media (--lg) {
+        width: 100%;
+        margin-bottom: 18px;
+      }
     }
 
     &>strong {
@@ -129,6 +184,10 @@ export default {
       line-height: 1.45;
       color: var(--color-blue);
       margin-bottom: 50px;
+
+      @media (--sm) {
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -136,14 +195,50 @@ export default {
     display: flex;
     align-items: center;
 
+    @media (--lg) {
+      display: none;
+    }
+
     &>*:first-child {
       margin-right: 30px;
+    }
+
+    &-mobile {
+      display: none;
+
+      @media (--lg) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &>*:first-child {
+          margin-right: 4%;
+        }
+      }
     }
   }
 
   &__swiper {
     width: 52%;
     position: relative;
+
+    @media (--xl) {
+      width: 48%;
+    }
+
+    @media (--lg) {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (--sm) {
+      width: 88%;
+    }
+
+    @media (--xs) {
+      width: 100%;
+    }
 
     &::before {
       content: "";
@@ -154,6 +249,28 @@ export default {
       width: 70%;
       height: 520px;
       background: url('@/assets/img/swiper/swiper_fon.png') center top / contain no-repeat;
+
+      @media (--xl) {
+        top: calc(var(--nav-h) - 80px);
+      }
+
+      @media (--lg) {
+        width: 61%;
+        height: 400px;
+        left: 10%;
+      }
+
+      @media (--sm) {
+        width: 47%;
+        height: 260px;
+        top: calc(var(--nav-h) - 50px);
+        left: 25%;
+      }
+
+      @media (--xs) {
+        width: 70%;
+        left: 17%;
+      }
     }
   }
 
@@ -161,6 +278,10 @@ export default {
     color: var(--color-blue);
     text-align: center;
     margin-bottom: 60px;
+
+    @media (--sm) {
+      display: none;
+    }
 
     &>a {
       display: inline-flex;
@@ -189,9 +310,21 @@ export default {
     margin-top: calc(var(--nav-h) + 20px);
     margin-bottom: 40px;
 
+    @media (--lg) {
+      margin-bottom: 20px;
+    }
+
     & .swiper-slide {
       height: auto;
       padding-left: 17%;
+
+      @media (--sm) {
+        padding-left: 35%;
+      }
+
+      @media (--xs) {
+        padding-left: 20%;
+      }
 
       &>img {
         width: 100%;
@@ -206,6 +339,25 @@ export default {
     --w-slide-help: 120px;
     width: calc(3.5 * var(--w-slide-help));
     margin-left: 17%;
+
+    @media (--xl) {
+      --w-slide-help: 100px;
+    }
+
+    @media (--lg) {
+      margin-bottom: 50px;
+    }
+
+    @media (--sm) {
+      --w-slide-help: 70px;
+      margin-left: 35%;
+    }
+
+    @media (--xs) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 26px;
+    }
 
     & .swiper-slide {
       border-bottom: solid 2px transparent;

@@ -31,6 +31,7 @@
           (Biotrue®) по уходу за мягкими контактными линзами во флаконах, в комплекте с контейнером для хранения
           контактных линз и без контейнера.
         </p>
+        <p>BAUSCH.RU РЕКЛАМА</p>
       </div>
     </div>
   </footer>
@@ -51,12 +52,23 @@ export default {
     padding-top: calc(.5*var(--container-padding-h));
     padding-bottom: calc(.5*var(--container-padding-h));
     margin-bottom: var(--med-h);
+    @media (--xs) {
+      display: flex;
+      flex-direction: column-reverse;
+      padding-top: 0;
+    }
   }
   &__social {
     display: flex;
     align-items: center;
     float: right;
     margin-left: 20px;
+    @media (--xs) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+    }
 
     &-item {
       display: block;
@@ -80,6 +92,10 @@ export default {
     line-height: 1.6;
     color: #8A8A8A;
     margin-top: 15px;
+
+    @media (--xs) {
+      font-size: 10px;
+    }
   }
 }
 </style>
