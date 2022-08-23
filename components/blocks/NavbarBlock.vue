@@ -3,7 +3,7 @@
     <nav class="nav" ref="nav">
       <div class="nav__content container">
         <div class="nav__logo">
-          <a href="#">
+          <a href="/">
             <img src="@/assets/img/logo.svg" alt="Логотип">
           </a>
         </div>

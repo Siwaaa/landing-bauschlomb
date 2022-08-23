@@ -327,10 +327,10 @@ export default {
 
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity .5s ease-in;
 }
 
-.modal-enter-from,
+.modal-enter,
 .modal-leave-to {
   opacity: 0;
 }

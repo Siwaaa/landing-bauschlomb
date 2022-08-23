@@ -1,6 +1,6 @@
 <template>
   <section class="utp">
-    <div class="utp__content container">
+    <div class="utp__content utp__circle container">
       <div class="utp__items">
         <div class="utp__items-item"><img src="@/assets/img/utp-1.svg" alt="" />
           <p>Край контактных линз — тонкий закругленный, обеспечивает мягкое взаимодействие с поверхностью глаза
@@ -107,6 +107,40 @@ export default {
     width: fit-content;
     margin-right: auto;
     margin-left: auto;
+  }
+  &__circle {
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 9%;
+      left: 1%;
+      width: 4%;
+      height: 20%;
+      background: url(@/assets/img/circles/32.png) center / contain no-repeat;
+      @media (--md) {
+        min-width: 29px;
+        min-height: 77px;
+        left: 3%;
+      }
+      @media (--xs) {
+        bottom: 30%;
+      }
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 11%;
+      right: 1%;
+      width: 10%;
+      height: 12%;
+      background: url(@/assets/img/circles/31.png) center / contain no-repeat;
+      @media (--md) {
+        display: none;
+      }
+    }
   }
 }
 </style>

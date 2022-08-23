@@ -13,7 +13,7 @@
           <Button title="Получить скидку" imgRight="right_small.svg" @click.native="onModal" />
         </div>
       </div>
-      <div class="quiz-final__img">
+      <div class="quiz-final__img quiz-final__circle">
         <img src="@/assets/img/final_img.jpg" alt="">
       </div>
     </div>
@@ -175,6 +175,7 @@ export default {
 }
 
 .quiz-final {
+  position: relative;
   animation: app-panel-enter 1.2s forwards;
 
   &__img {
@@ -205,6 +206,33 @@ export default {
 
     @media (--xs) {
       font-size: 10px;
+    }
+  }
+
+  &__circle {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 4%;
+      right: -4%;
+      width: 13%;
+      height: 13%;
+      background: url(@/assets/img/circles/11.png) center / contain no-repeat;
+
+      @media (--2xl) {
+        right: 4%;
+      }
+      @media (--md) {
+        max-width: 50px;
+        max-height: 50px;
+      }
+      @media (--sm) {
+        max-width: 38px;
+        max-height: 38px;
+      }
     }
   }
 }

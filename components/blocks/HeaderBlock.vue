@@ -14,7 +14,7 @@
           <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')"/>
         </div>
       </div>
-      <div class="header__swiper">
+      <div class="header__swiper header__circle">
         <div class="swiper swiper-main">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -303,6 +303,32 @@ export default {
     }
 
   }
+  &__circle {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 4%;
+      right: -4%;
+      width: 13%;
+      height: 13%;
+      background: url(@/assets/img/circles/11.png) center / contain no-repeat;
+
+      @media (--2xl) {
+        right: 4%;
+      }
+      @media (--md) {
+        max-width: 50px;
+        max-height: 50px;
+      }
+      @media (--sm) {
+        max-width: 38px;
+        max-height: 38px;
+      }
+    }
+  }
 }
 
 .swiper {
@@ -364,8 +390,12 @@ export default {
       width: var(--w-slide-help);
       height: var(--w-slide-help);
       padding: 10px 0px 10px 10px;
-      transition: border-bottom .5s ease-in;
+      transition: border-bottom .4s ease-in;
       cursor: pointer;
+
+      &:hover {
+        border-bottom: solid 2px #14C9D9;
+      }
 
       &>img {
         width: 100%;

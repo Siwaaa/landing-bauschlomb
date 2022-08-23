@@ -58,6 +58,7 @@ export default {
 
 <style lang="postcss">
 .quiz {
+  position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,6 +68,36 @@ export default {
 
   &-main {
     background-image: url(@/assets/img/061@2x.jpg);
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 7%;
+    left: 2%;
+    width: 3%;
+    height: 9%;
+    background: url(@/assets/img/circles/22.png) center / contain no-repeat;
+    @media (--md) {
+      min-width: 21px;
+      min-height: 52px;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    width: 6%;
+    height: 9%;
+    background: url(@/assets/img/circles/21.png) center / contain no-repeat;
+    @media (--md) {
+      min-width: 50px;
+      min-height: 50px;
+    }
   }
 
   @media (--xl) {
@@ -93,7 +124,7 @@ export default {
   &__panel {
     @media (--xs) {
       height: 100%;
-    } 
+    }
   }
 
   &__btn {

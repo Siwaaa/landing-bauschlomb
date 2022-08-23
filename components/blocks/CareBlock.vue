@@ -1,6 +1,6 @@
 <template>
   <section class="care">
-    <div class="care__content container">
+    <div class="care__content care__circle container">
       <h2>Для ухода за вашими контактными линзами выбирайте</h2>
       <div class="care__items">
         <div class="care__items-item"> <img src="@/assets/img/care/1.jpg" alt="Раствор ReNu® MultiPlus" />
@@ -145,7 +145,26 @@ export default {
 
         @media (--xs) {
           font-size: 12px;
+          margin-bottom: 8px;
         }
+      }
+    }
+  }
+  &__circle {
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 4%;
+      left: 1%;
+      width: 4%;
+      height: 22%;
+      background: url(@/assets/img/circles/41.png) center / contain no-repeat;
+      @media (--sm) {
+        min-width: 29px;
+        min-height: 100px;
+        left: 3%;
       }
     }
   }

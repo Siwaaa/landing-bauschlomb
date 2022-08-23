@@ -69,6 +69,9 @@ export default {
   font-weight: 500;
   font-size: var(--fz-btn);
   line-height: 1;
+  transition: background .4s ease-in-out, 
+              color .4s ease-in-out,
+              border .4s ease-in-out;
 
   @media (--sm) {
     padding: 12px 22px;
@@ -82,12 +85,22 @@ export default {
     background-color: var(--color-white);
     color: var(--color-blue);
     border: var(--btn-border) solid var(--color-blue);
+
+    &:hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+    }
   }
 
   &-blue {
     background-color: var(--color-blue);
     color: var(--color-white);
     border: var(--btn-border) solid var(--color-blue);
+
+    &:hover {
+      background-color: #14C9D9;
+      border: var(--btn-border) solid #14C9D9;
+    }
   }
   &__icon {
     height: 19px;
