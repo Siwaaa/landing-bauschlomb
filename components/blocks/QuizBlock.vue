@@ -1,25 +1,35 @@
 <template>
-  <section class="quiz">
-    <div class="quiz__content container">
-      <div class="quiz__panel">
-        <div class="control-panel">
-          <div class="control-panel__content">
-            <div class="control-panel__head">
-              <h3>Дорога без <br> сюрпризов</h3>
-            </div>
-            <div class="control-panel__desc">
-              <p>Узнайте в каких ситуациях на дороге <strong>PureVision<sup class="sub">®</sup> 2</strong> могут вам
-                помочь. </p>
-            </div>
-            <div class="control-panel__btn">
-              <Button title="Поехали" color="blue" imgRight="right_m.svg" />
+  <transition name="quiz" mode="out-in">
+    <!-- Блок квиза -->
+    <Quiz v-if="startedQuiz" />
+    <!-- Конец блока квиза -->
+    <section v-else class="quiz quiz-main" key="s3">
+      <div class="quiz__content container">
+        <div class="quiz__panel">
+          <div class="control-panel">
+            <div class="control-panel__content">
+              <div class="control-panel__head">
+                <h3>Дорога без <br> сюрпризов</h3>
+              </div>
+              <div class="control-panel__desc">
+                <p>Узнайте в каких ситуациях на дороге <strong>PureVision<sup class="sub">®</sup> 2</strong> могут вам
+                  помочь. </p>
+              </div>
+              <div class="control-panel__btn">
+                <Button title="Поехали" color="blue" imgRight="right_m.svg" @click.native="startedQuiz = true" />
+              </div>
             </div>
           </div>
         </div>
+        <div class="quiz__btn">
+          <Button title="Получить скидку" size="s" imgLeft="surprise.svg" imgRight="right_small.svg"
+            @click.native="onModal" />
+        </div>
       </div>
-    </div>
-    <Modal :visible.sync="quizModal" :type="typeModal"/>
-  </section>
+      <Modal :visible.sync="quizModal" :type="typeModal" />
+    </section>
+  </transition>
+
 </template>
 
 <script>
@@ -32,7 +42,8 @@ export default {
   data() {
     return {
       quizModal: false,
-      typeModal: 'reg'
+      typeModal: 'reg',
+      startedQuiz: false
     }
   },
   methods: {
@@ -40,17 +51,30 @@ export default {
       this.quizModal = true
     }
   },
+  mounted() {
+  },
 }
 </script>
 
 <style lang="postcss">
 .quiz {
-  background: url(@/assets/img/061@2x.jpg) center / cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
 
+  &-main {
+    background-image: url(@/assets/img/061@2x.jpg);
+  }
+
+  @media (--xl) {
+    background-position: bottom right;
+  }
+
   &__content {
+    position: relative;
     height: 1000px;
     padding-top: var(--container-padding-h);
     padding-bottom: var(--container-padding-h);
@@ -60,22 +84,58 @@ export default {
       max-height: 800px;
       height: 86vh;
     }
+
+    @media (--xs) {
+      height: 568px;
+    }
   }
 
   &__panel {
-    @media (--sm) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     @media (--xs) {
       height: 100%;
+    } 
+  }
+
+  &__btn {
+    position: absolute;
+    right: 6%;
+    bottom: 8%;
+
+    @media (--md) {
+      display: none;
+    }
+
+    &>.btn-white {
+      border: var(--btn-border) solid transparent !important;
     }
   }
 }
 
+.quiz-enter-active,
+.quiz-leave-active {
+  transition: all .55s ease-in-out;
+}
+
+.quiz-enter {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.quiz-leave-to {
+  opacity: 0;
+}
+
 .control-panel {
+  @media (--sm) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (--xs) {
+    height: 100%;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;

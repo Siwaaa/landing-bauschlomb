@@ -251,6 +251,7 @@ export default {
     font-size: var(--fz-h3);
     color: var(--color-black);
     margin-bottom: 3vh;
+    cursor: auto;
 
     @media (--lg) {
       height: 44px;

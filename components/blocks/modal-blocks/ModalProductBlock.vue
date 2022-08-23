@@ -35,7 +35,7 @@ export default {
 
 <style lang="postcss">
 .modal-product {
-   &.modal__content {
+  &.modal__content {
     width: 60vw;
     padding: 50px 40px 25px;
 
@@ -43,13 +43,6 @@ export default {
       width: 86vw;
       padding: 25px 10px 15px;
     }
-  }
-
-  & .modal__header {
-  }
-  & .modal__main {
-  }
-  & .modal__footer {
   }
 }
 </style>
