@@ -37,8 +37,20 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxt/postcss8'
+    '@nuxt/postcss8',
+    '@nuxtjs/google-fonts'
   ],
+
+  // Fonts Google options: https://google-fonts.nuxtjs.org/options
+  googleFonts: {
+    display: 'swap',
+    families: {
+      Montserrat: {
+        wght: [200,400,500,700],
+      },
+    },
+    preconnect: true
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -59,7 +71,6 @@ export default {
       },
       preset: {
         autoprefixer: {
-          flexbox: true,
           grid: true,
         },
       }

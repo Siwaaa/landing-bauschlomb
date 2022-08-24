@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <Modal :visible.sync="careModal" :type="typeModal" :product="productModal"/>
+    <Modal :visible.sync="careModal" :type="typeModal" :product="productModal" />
   </section>
 </template>
 
@@ -86,72 +86,9 @@ export default {
     }
   }
 
-  &__items {
-    display: flex;
-
-    @media (--sm) {
-      flex-direction: column;
-    }
-
-    &-item {
-      flex-basis: 50%;
-      max-width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      @media (--sm) {
-        flex-basis: 100%;
-        max-width: 100%;
-
-        &:first-child {
-          margin-bottom: 36px;
-        }
-      }
-
-      &>img {
-        height: 349px;
-        object-fit: contain;
-        margin-bottom: 15px;
-
-        @media (--xl) {
-          height: 300px;
-        }
-
-        @media (--lg) {
-          height: 260px;
-        }
-
-        @media (--md) {
-          height: 220px;
-        }
-
-        @media (--sm) {
-          height: 175px;
-        }
-      }
-
-      &>h3 {
-        font-weight: 700;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: var(--color-blue);
-        margin-bottom: 20px;
-
-        @media (--lg) {
-          font-size: 20px;
-        }
-
-        @media (--xs) {
-          font-size: 12px;
-          margin-bottom: 8px;
-        }
-      }
-    }
-  }
   &__circle {
     position: relative;
+
     &::before {
       content: '';
       display: inline-block;
@@ -161,10 +98,76 @@ export default {
       width: 4%;
       height: 22%;
       background: url(@/assets/img/circles/41.png) center / contain no-repeat;
+
       @media (--sm) {
         min-width: 29px;
         min-height: 100px;
         left: 3%;
+      }
+    }
+  }
+}
+
+.care__items {
+  display: flex;
+
+  @media (--sm) {
+    flex-direction: column;
+  }
+
+  &-item {
+    flex-basis: 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media (--sm) {
+      flex-basis: 100%;
+      max-width: 100%;
+
+      &:first-child {
+        margin-bottom: 36px;
+      }
+    }
+
+    &>img {
+      height: 349px;
+      object-fit: contain;
+      margin-bottom: 15px;
+
+      @media (--xl) {
+        height: 300px;
+      }
+
+      @media (--lg) {
+        height: 260px;
+      }
+
+      @media (--md) {
+        height: 220px;
+      }
+
+      @media (--sm) {
+        height: 175px;
+      }
+    }
+
+    &>h3 {
+      font-weight: 700;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      margin-bottom: 20px;
+
+      @media (--lg) {
+        font-size: 20px;
+      }
+
+      @media (--xs) {
+        font-size: 12px;
+        margin-bottom: 8px;
       }
     }
   }

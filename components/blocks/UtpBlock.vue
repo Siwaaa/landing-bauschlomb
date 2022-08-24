@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="utp__btn">
-        <Button title="Получить скидку" imgRight="right_small.svg" @click.native="onModal('reg')"/>
+        <Button title="Получить скидку" imgRight="right_small.svg" @click.native="onModal('reg')" />
       </div>
     </div>
     <Modal :visible.sync="utpModal" :type="typeModal" />
@@ -46,70 +46,15 @@ export default {
     padding-bottom: var(--container-padding-h);
   }
 
-  &__items {
-    display: flex;
-    margin-bottom: 80px;
-
-    @media (--xs) {
-      flex-direction: column;
-      margin-bottom: 30px;
-      width: 80%;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    &-item {
-      flex-basis: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      @media (--xs) {
-        &:first-child {
-          margin-bottom: 36px;
-        }
-      }
-
-      &>img {
-        width: 288px;
-        height: 288px;
-        object-fit: contain;
-        margin-bottom: 30px;
-
-        @media (--xl) {
-          width: 210px;
-          height: 210px;
-        }
-
-        @media (--lg) {
-          width: 190px;
-          height: 190px;
-        }
-
-        @media (--sm) {
-          width: 150px;
-          height: 150px;
-          margin-bottom: 20px;
-        }
-      }
-
-      &>p {
-        width: 90%;
-        font-weight: 400;
-        font-size: var(--fz);
-        line-height: 1.45;
-      }
-    }
-  }
-
   &__btn {
     width: fit-content;
     margin-right: auto;
     margin-left: auto;
   }
+
   &__circle {
     position: relative;
+
     &::before {
       content: '';
       display: inline-block;
@@ -119,15 +64,18 @@ export default {
       width: 4%;
       height: 20%;
       background: url(@/assets/img/circles/32.png) center / contain no-repeat;
+
       @media (--md) {
         min-width: 29px;
         min-height: 77px;
         left: 3%;
       }
+
       @media (--xs) {
         bottom: 30%;
       }
     }
+
     &::after {
       content: '';
       display: inline-block;
@@ -137,9 +85,68 @@ export default {
       width: 10%;
       height: 12%;
       background: url(@/assets/img/circles/31.png) center / contain no-repeat;
+
       @media (--md) {
         display: none;
       }
+    }
+  }
+}
+
+/* Фикс баг с игнором display: flex */
+.utp__items {
+  margin-bottom: 80px;
+  display: flex;
+
+  @media (--xs) {
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &-item {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media (--xs) {
+      &:first-child {
+        margin-bottom: 36px;
+      }
+    }
+
+    &>img {
+      width: 288px;
+      height: 288px;
+      object-fit: contain;
+      margin-bottom: 30px;
+
+      @media (--xl) {
+        width: 210px;
+        height: 210px;
+      }
+
+      @media (--lg) {
+        width: 190px;
+        height: 190px;
+      }
+
+      @media (--sm) {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &>p {
+      width: 90%;
+      font-weight: 400;
+      font-size: var(--fz);
+      line-height: 1.45;
     }
   }
 }
