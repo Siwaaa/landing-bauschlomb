@@ -3,7 +3,7 @@
     <!-- Блок квиза -->
     <Quiz v-if="startedQuiz" />
     <!-- Конец блока квиза -->
-    <section v-else class="quiz quiz-main" key="s3">
+    <section v-else id="quiz" class="quiz quiz-main" key="s3">
       <div class="quiz__content container">
         <div class="quiz__panel">
           <div class="control-panel">

@@ -30,6 +30,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/smoothScroll.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,7 +39,13 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxt/postcss8',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/svg'
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    'primevue/nuxt'
   ],
 
   // Fonts Google options: https://google-fonts.nuxtjs.org/options
@@ -52,9 +59,9 @@ export default {
     preconnect: true
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  primevue: {
+    components: ['Slider'],
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -67,7 +74,6 @@ export default {
         'postcss-custom-media': {
           importFrom: './assets/css/custom-media.css'
         }
-        // добавить cssnano
       },
       preset: {
         autoprefixer: {

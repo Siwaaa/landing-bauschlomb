@@ -1,14 +1,15 @@
 <template>
-  <!-- button(title, type="button", size="m", color="white", imgLeft, imgRight)
-  button(type=type, class=`btn btn-${color} btn-${size}` )-->
   <button :class="buttonClass" :type="type" :aria-label="defaultAriaLabel" :disabled="disabled">
     <slot>
-      <img v-if="imgLeft" class="btn__icon" :src="require(`@/assets/img/${imgLeft}`)" />
+      <div v-if="imgLeft" v-html="require(`@/assets/img/${imgLeft}?raw`)" class="btn__icon-inline" />
+      <!-- <img v-if="imgLeft" class="btn__icon" :src="require(`@/assets/img/${imgLeft}`)" /> -->
       <span class="btn__label">{{ title || '&nbsp;' }}</span>
-      <img v-if="imgRight" class="btn__icon" :src="require(`@/assets/img/${imgRight}`)" />
+      <div v-if="imgRight" v-html="require(`@/assets/img/${imgRight}?raw`)" class="btn__icon-inline" />
+      <!-- <img v-if="imgRight" class="btn__icon" :src="require(`@/assets/img/${imgRight}`)" /> -->
     </slot>
   </button>
 </template>
+
 <script>
 export default {
   name: "Button",
@@ -69,13 +70,14 @@ export default {
   font-weight: 500;
   font-size: var(--fz-btn);
   line-height: 1;
-  transition: background .4s ease-in-out, 
-              color .4s ease-in-out,
-              border .4s ease-in-out;
+  transition: background .4s ease-in-out,
+    color .4s ease-in-out,
+    border .3s ease-in-out;
 
   @media (--sm) {
     padding: 12px 22px;
   }
+
   @media (--xs) {
     padding: 10px 15px;
     --btn-border: 1px;
@@ -89,6 +91,17 @@ export default {
     &:hover {
       background-color: var(--color-blue);
       color: var(--color-white);
+
+      & .btn__icon-inline>svg {
+        & path {
+          stroke: var(--color-white);
+        }
+
+        &.fill>path {
+          fill: var(--color-white);
+          stroke: none;
+        }
+      }
     }
   }
 
@@ -102,6 +115,7 @@ export default {
       border: var(--btn-border) solid #14C9D9;
     }
   }
+
   &__icon {
     height: 19px;
     object-fit: contain;
@@ -112,18 +126,54 @@ export default {
 
     .btn-s & {
       height: auto;
-      
+
       &:first-child {
         @media (--lg) {
           height: 23px;
         }
+
         @media (--xs) {
           height: 16px;
         }
       }
+
       &:last-child {
         @media (--xs) {
           height: 13px;
+        }
+      }
+    }
+  }
+
+  &__icon-inline {
+    &>svg {
+      height: 19px;
+
+      &>path {
+        transition: all .4s ease-in-out;
+      }
+
+      @media (--xs) {
+        height: 10px;
+      }
+
+      .btn-s & {
+        height: auto;
+
+        &:first-child {
+          @media (--lg) {
+            height: 23px;
+          }
+
+          @media (--xs) {
+            height: 16px;
+          }
+        }
+
+        &:last-child {
+          @media (--xs) {
+            height: 13px;
+          }
         }
       }
     }
@@ -133,6 +183,10 @@ export default {
     font-weight: 700;
     font-size: var(--fz-btn-small);
     padding: 12px 26px;
+
+    &:hover {
+      border: var(--btn-border) solid var(--color-white) !important;
+    }
 
     @media (--2xl) {
       padding: 10px 20px;

@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="header__go">
-      <a href="">Поехали</a>
+      <a href="#quiz">Поехали</a>
     </div>
     <Modal :visible.sync="headerModal" :type="typeModal" />
   </section>
@@ -278,6 +278,10 @@ export default {
     color: var(--color-blue);
     text-align: center;
     margin-bottom: 60px;
+    transition: transform .5s ease-in-out;
+    &:hover {
+      transform: translateY(8px);
+    }
 
     @media (--sm) {
       display: none;

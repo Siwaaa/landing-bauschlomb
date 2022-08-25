@@ -1,6 +1,6 @@
 <template>
   <!-- Финальный скрин квиза -->
-  <section v-if="finishedQuiz" class="quiz-final container">
+  <section v-if="finishedQuiz" ref="quiz-final" class="quiz-final animate-app-panel container">
     <div class="header__content">
       <div class="header__info">
         <h1> PureVision<sup class="sub">®</sup> 2</h1>
@@ -151,6 +151,7 @@ export default {
       this.currentQuestion++
     },
     onModal() {
+      this.$refs['quiz-final'].classList.remove('animate-app-panel')
       this.quizModal = true
     }
   }
@@ -176,7 +177,6 @@ export default {
 
 .quiz-final {
   position: relative;
-  animation: app-panel-enter 1.2s forwards;
 
   &__img {
     width: 50%;
@@ -234,6 +234,9 @@ export default {
         max-height: 38px;
       }
     }
+  }
+  &.animate-app-panel {
+    animation: app-panel-enter 1.2s forwards;
   }
 }
 
