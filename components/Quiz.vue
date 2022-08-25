@@ -160,7 +160,12 @@ export default {
 
 <style lang="postcss">
 .quiz-app {
+  --margin-t-quiz: 120px;
   transition: background 0.8s ease-in-out;
+
+  @media (--sm) {
+    margin-top: var(--margin-t-quiz);
+  }
 
   @media (--sm) {
     .quiz__content {
@@ -185,6 +190,9 @@ export default {
       width: 80%;
       margin-right: auto;
       margin-left: auto;
+    }
+    @media (--md) {
+      width: 92%;
     }
 
     &>img {
@@ -246,6 +254,7 @@ export default {
   animation-iteration-count: 1;
   @media (--sm) {
     width: 100%;
+    transform: translateY(calc(-1* var(--margin-t-quiz)));
   }
   @media (--xs) {
     align-items: flex-start;
@@ -273,13 +282,14 @@ export default {
       height: 420px;
     }
     @media (--sm) {
+      width: 100%;
       position: relative;
       top: -10px;
       border-radius: 0 0 50% 50%;
     }
 
     @media (--xs) {
-      width: 290px;
+      /* width: 290px; */
       height: 290px;
       justify-content: flex-start;
     }

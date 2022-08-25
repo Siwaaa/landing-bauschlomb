@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonClass" :type="type" :aria-label="defaultAriaLabel" :disabled="disabled">
+  <button :class="buttonClass" :type="type" :aria-label="defaultAriaLabel" :disabled="disabled" >
     <slot>
       <div v-if="imgLeft" v-html="require(`@/assets/img/${imgLeft}?raw`)" class="btn__icon-inline" />
       <!-- <img v-if="imgLeft" class="btn__icon" :src="require(`@/assets/img/${imgLeft}`)" /> -->
@@ -63,6 +63,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 64px;
   padding: 16px 36px;
   border-radius: 30px;
   text-align: center;
@@ -146,59 +147,73 @@ export default {
   }
 
   &__icon-inline {
-    &>svg {
-      height: 19px;
+    &:first-child {
+      &>svg {
+        height: 35px;
 
-      &>path {
-        transition: all .4s ease-in-out;
+        &>path {
+          transition: all .4s ease-in-out;
+        }
+
+        @media (--xs) {
+          height: 19px;
+        }
       }
+    }
+
+      &>svg {
+        height: 19px;
+
+        &>path {
+          transition: all .4s ease-in-out;
+        }
+
+        @media (--xs) {
+          height: 10px;
+        }
+
+        .btn-s & {
+          height: auto;
+
+          &:first-child {
+            @media (--lg) {
+              height: 23px;
+            }
+
+            @media (--xs) {
+              height: 16px;
+            }
+          }
+
+          &:last-child {
+            @media (--xs) {
+              height: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    &-s {
+      font-weight: 700;
+      font-size: var(--fz-btn-small);
+      padding: 12px 26px;
+
+      &:hover {
+        border: var(--btn-border) solid var(--color-white) !important;
+      }
+
+      @media (--2xl) {
+        padding: 10px 20px;
+      }
+    }
+
+    &__label {
+      margin: 0 10px;
 
       @media (--xs) {
-        height: 10px;
-      }
-
-      .btn-s & {
-        height: auto;
-
-        &:first-child {
-          @media (--lg) {
-            height: 23px;
-          }
-
-          @media (--xs) {
-            height: 16px;
-          }
-        }
-
-        &:last-child {
-          @media (--xs) {
-            height: 13px;
-          }
-        }
+        margin: 0 5px;
       }
     }
   }
-
-  &-s {
-    font-weight: 700;
-    font-size: var(--fz-btn-small);
-    padding: 12px 26px;
-
-    &:hover {
-      border: var(--btn-border) solid var(--color-white) !important;
-    }
-
-    @media (--2xl) {
-      padding: 10px 20px;
-    }
-  }
-
-  &__label {
-    margin: 0 10px;
-
-    @media (--xs) {
-      margin: 0 5px;
-    }
-  }
-}
 </style>

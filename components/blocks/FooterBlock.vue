@@ -1,9 +1,17 @@
 <template>
   <footer class="footer">
     <div class="footer__content container">
-      <div class="footer__social"> <a class="footer__social-item" href="#" target="_blank"
-          rel="noopener noreferrer"><img src="@/assets/img/social/vk.svg" alt="vk" /></a><a class="footer__social-item"
-          href="#" target="_blank" rel="noopener noreferrer"><img src="@/assets/img/social/youtube.svg" alt="youtube" /></a>
+      <div class="footer__social"> 
+        <a class="footer__social-item" href="#" target="_blank"
+          rel="noopener noreferrer">
+          <!-- <div v-html="vkLogo" /> -->
+          <!-- <img src="@/assets/img/social/vk.svg" alt="vk" /> -->
+        </a>
+        <a class="footer__social-item"
+          href="#" target="_blank" rel="noopener noreferrer">
+          <!-- <div v-html="youtubeLogo" /> -->
+          <!-- <img src="@/assets/img/social/youtube.svg" alt="youtube" /> -->
+        </a>
       </div>
       <div class="footer__references">
         <p>© BAUSCH & LOMB INCORPORATED. Вся информация и материалы, размещенные на этом сайте, предназначены
@@ -38,9 +46,9 @@
 </template>
 
 <script>
+
 export default {
   name: 'FooterBlock',
-
 }
 </script>
 
@@ -74,9 +82,18 @@ export default {
       display: block;
       width: 49px;
       height: 49px;
+      background: url(@/assets/img/social/youtube.svg) center / contain no-repeat;
+      transition: background .4s ease-in-out;
+      &:hover {
+        background-image: url(@/assets/img/social/youtube-hover.svg);
+      }
 
       &:first-child {
         margin-right: 15px;
+        background: url(@/assets/img/social/vk.svg) center / contain no-repeat;
+        &:hover {
+          background-image: url(@/assets/img/social/vk-hover.svg);
+        }
       }
       & > img {
         width: 100%;

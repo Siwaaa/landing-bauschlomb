@@ -117,7 +117,7 @@ export default {
 <style lang="postcss">
 .header {
   &__content {
-    margin-bottom: 60px;
+    padding-bottom: 60px;
     margin-top: calc(var(--nav-h) + 70px);
     display: flex;
     justify-content: space-between;
@@ -132,7 +132,7 @@ export default {
 
     @media (--xs) {
       margin-top: calc(var(--nav-h) + 15px);
-      margin-bottom: 40px;
+      padding-bottom: 40px;
     }
   }
 
