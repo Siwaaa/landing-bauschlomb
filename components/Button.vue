@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonClass" :type="type" :aria-label="defaultAriaLabel" :disabled="disabled" >
+  <button :class="buttonClass" :type="type" :aria-label="defaultAriaLabel" :disabled="disabled">
     <slot>
       <div v-if="imgLeft" v-html="require(`@/assets/img/${imgLeft}?raw`)" class="btn__icon-inline" />
       <!-- <img v-if="imgLeft" class="btn__icon" :src="require(`@/assets/img/${imgLeft}`)" /> -->
@@ -75,6 +75,10 @@ export default {
     color .4s ease-in-out,
     border .3s ease-in-out;
 
+  @media (--2xl) {
+    padding: 14px 24px;
+  }
+
   @media (--sm) {
     padding: 12px 22px;
   }
@@ -117,37 +121,8 @@ export default {
     }
   }
 
-  &__icon {
-    height: 19px;
-    object-fit: contain;
-
-    @media (--xs) {
-      height: 10px;
-    }
-
-    .btn-s & {
-      height: auto;
-
-      &:first-child {
-        @media (--lg) {
-          height: 23px;
-        }
-
-        @media (--xs) {
-          height: 16px;
-        }
-      }
-
-      &:last-child {
-        @media (--xs) {
-          height: 13px;
-        }
-      }
-    }
-  }
-
   &__icon-inline {
-    &:first-child {
+    &:nth-child(1) {
       &>svg {
         height: 35px;
 
@@ -159,8 +134,27 @@ export default {
           height: 19px;
         }
       }
+
+      .btn-s &>svg {
+        height: auto;
+
+        @media (--2xl) {
+          height: 26px;
+        }
+
+        @media (--lg) {
+          height: 21px;
+        }
+        @media (--sm) {
+          height: 19px;
+        }
+        @media (--xs) {
+          height: 16px;
+        }
+      }
     }
 
+    &:last-child {
       &>svg {
         height: 19px;
 
@@ -168,52 +162,61 @@ export default {
           transition: all .4s ease-in-out;
         }
 
+        @media (--2xl) {
+          height: 16px;
+        }
+        @media (--sm) {
+          height: 13px;
+        }
         @media (--xs) {
           height: 10px;
         }
+      }
 
-        .btn-s & {
-          height: auto;
+      .btn-s &>svg {
+        height: 18px;
 
-          &:first-child {
-            @media (--lg) {
-              height: 23px;
-            }
+        @media (--2xl) {
+          height: 16px;
+        }
 
-            @media (--xs) {
-              height: 16px;
-            }
-          }
+        @media (--md) {
+          height: 13px;
+        }
 
-          &:last-child {
-            @media (--xs) {
-              height: 13px;
-            }
-          }
+        @media (--xs) {
+          height: 11px;
         }
       }
     }
+  }
 
-    &-s {
-      font-weight: 700;
-      font-size: var(--fz-btn-small);
-      padding: 12px 26px;
+  &-s {
+    font-weight: 700;
+    font-size: var(--fz-btn-small);
+    padding: 12px 26px;
 
-      &:hover {
-        border: var(--btn-border) solid var(--color-white) !important;
-      }
-
-      @media (--2xl) {
-        padding: 10px 20px;
-      }
+    &:hover {
+      border: var(--btn-border) solid var(--color-white) !important;
     }
 
-    &__label {
-      margin: 0 10px;
-
-      @media (--xs) {
-        margin: 0 5px;
-      }
+    @media (--2xl) {
+      padding: 10px 20px;
+    }
+    @media (--sm) {
+      padding: 7px 14px;
     }
   }
+
+  &__label {
+    margin: 0 10px;
+
+    @media (--md) {
+      margin: 0 6px;
+    }
+    @media (--xs) {
+      margin: 0 5px;
+    }
+  }
+}
 </style>

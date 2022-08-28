@@ -32,7 +32,7 @@ export default {
   methods: {
     // fixed header
     onScrollHeader() {
-      if (process.client) {
+      if (process.client && document.documentElement.clientWidth < 481) {
         const header = this.$refs.nav
         let prevScroll = window.pageYOffset // на сколько была прокручена страница ранее
         let currentScroll // на сколько прокручена страница сейчас
@@ -85,10 +85,16 @@ export default {
   &__logo {
     max-width: 220px;
 
+    @media (--2xl) {
+      max-width: 190px;
+    }
+
     @media (--lg) {
       max-width: 180px;
     }
-
+    @media (--md) {
+      max-width: 140px;
+    }
     @media (--xs) {
       max-width: 120px;
     }

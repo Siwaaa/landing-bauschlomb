@@ -125,14 +125,14 @@ export default {
       object-fit: contain;
       margin-bottom: 30px;
 
-      @media (--xl) {
+      @media (--2xl) {
         width: 210px;
         height: 210px;
       }
 
       @media (--lg) {
-        width: 190px;
-        height: 190px;
+        width: 180px;
+        height: 180px;
       }
 
       @media (--sm) {

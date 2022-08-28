@@ -207,6 +207,9 @@ export default {
       object-fit: contain;
       margin-bottom: 4vh;
 
+      @media (--2xl) {
+        height: 340px;
+      }
       @media (--lg) {
         height: 300px;
       }

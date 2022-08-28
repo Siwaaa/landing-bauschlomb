@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showAptek" class="modal__content modal-aptek">
+  <div v-if="showAptek" ref="container-aptek" class="modal__content modal-aptek">
     <div class="modal__header" id="modalTitle">
       <h2>Выберите, где приобрести <br>
         <strong>PureVision<sup class="sub">®</sup> 2</strong>
@@ -51,7 +51,6 @@
       * Для регистрации и получения баллов нужно подтвердить e-mail. Баллы поступят через несколько минут
     </div>
   </div>
-
 </template>
 
 <script>
@@ -297,7 +296,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$refs.apteks.clientHeight);
+    console.log(this.$refs['container-aptek'].offsetHeight);
   },
   watch: {
     valueSlider(oldVal, newVal) {
@@ -312,11 +311,24 @@ export default {
 .modal-aptek {
   &.modal__content {
     width: 80vw;
+    max-width: 1200px;
+    height: 780px;
     padding: 50px 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     @media (--md) {
-      width: 90vw;
+      width: 86vw;
+      height: 750px;
       padding: 20px;
+      justify-content: center;
+    }
+    @media (--sm) {
+      height: 720px;
+    }
+    @media (--xs) {
+      height: 690px;
     }
   }
 
@@ -432,6 +444,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
 
   @media (--md) {
     flex-direction: column-reverse;

@@ -23,6 +23,10 @@ html {
   font-size: .7em;
   margin-right: 2px;
   margin-left: 2px;
+
+  h1 &{
+    font-size: .5em;
+  }
 }
 :root {
   /* color */
@@ -43,31 +47,35 @@ html {
   --med-h: 85px;
 
   @media (--2xl) {
+    --fz-h1: 54px;
+    --fz-h3: 28px;
     --fz: 20px;
-    --fz-btn: 18px;
-    --nav-h: 80px;
-    --med-h: 60px;
+    --fz-btn: 16px;
+    --fz-btn-small: 13px;
+    --nav-h: 70px;
+    --med-h: 45px;
   }
   @media (--xl) {
-    --fz-h1: 57px;
+    --fz: 18px;
   }
   @media (--lg) {
-    --fz-h1: 57px;
-    --fz-h3: 28px;
-    --fz: 18px;
+    --fz-h1: 48px;
+    --fz-h3: 25px;
+    --nav-h: 62px;
   }
   @media (--md) {
     --container-padding-h: 40px;
     --container-padding-w: 20px;
-    --nav-h: 68px;
-    --fz-btn-small: 12px;
+    --fz-btn-small: 11px;
   }
   @media (--sm) {
     --fz-h1: 42px;
-    --fz-h3: 24px;
+    --fz-h3: 23px;
     --fz: 16px;
-    --fz-btn: 16px;
-    --container-padding-w: 10px;
+    --fz-btn: 14px;
+    --nav-h: 50px;
+    --med-h: 60px;
+    --container-padding-w: 15px;
   }
   @media (--xs) {
     --fz-h1: 30px;
@@ -75,7 +83,6 @@ html {
     --fz: 12px;
     --fz-btn: 12px;
     --fz-btn-small: 9px;
-    --nav-h: 50px;
     --med-h: 96px;
   }
 }

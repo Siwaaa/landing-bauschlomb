@@ -36,12 +36,13 @@ export default {
 <style lang="postcss">
 .modal-product {
   &.modal__content {
-    width: 60vw;
+    width: 56vw;
+    max-width: 900px;
     padding: 50px 40px 25px;
 
     @media (--lg) {
       width: 86vw;
-      padding: 25px 10px 15px;
+      padding: 25px 15px 15px;
     }
   }
 }

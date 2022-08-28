@@ -98,6 +98,9 @@ export default {
       min-width: 50px;
       min-height: 50px;
     }
+    @media (--xs) {
+      display: none;
+    }
   }
 
   @media (--xl) {
@@ -113,7 +116,7 @@ export default {
     @media (--2xl) {
       min-height: 568px;
       max-height: 800px;
-      height: 86vh;
+      height: 84vh;
     }
 
     @media (--xs) {
@@ -180,6 +183,10 @@ export default {
     text-align: center;
     overflow: hidden;
 
+    @media (--2xl) {
+      width: 460px;
+      height: 460px;
+    }
     @media (--lg) {
       width: 420px;
       height: 420px;
@@ -209,6 +216,10 @@ export default {
       margin-top: 20px;
       margin-bottom: 20px;
 
+      @media (--2xl) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
       @media (--xs) {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -224,12 +235,12 @@ export default {
       font-size: 20px;
       line-height: 1.45;
 
-      @media (--lg) {
-        font-size: 20px;
+      @media (--2xl) {
+        font-size: 18px;
       }
 
       @media (--sm) {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       @media (--xs) {

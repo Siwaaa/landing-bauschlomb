@@ -185,12 +185,17 @@ export default {
 
   &__img {
     width: 50%;
+    
+    @media (--2xl) {
+      width: 45%;
+    }
 
     @media (--lg) {
       width: 80%;
       margin-right: auto;
       margin-left: auto;
     }
+
     @media (--md) {
       width: 92%;
     }
@@ -208,6 +213,9 @@ export default {
     color: #8A8A8A;
     padding-top: 60px;
 
+    @media (--2xl) {
+      padding-top: 20px;
+    }
     @media (--lg) {
       padding-top: 0;
     }
@@ -233,16 +241,19 @@ export default {
       @media (--2xl) {
         right: 4%;
       }
+
       @media (--md) {
         max-width: 50px;
         max-height: 50px;
       }
+
       @media (--sm) {
         max-width: 38px;
         max-height: 38px;
       }
     }
   }
+
   &.animate-app-panel {
     animation: app-panel-enter 1.2s forwards;
   }
@@ -252,10 +263,12 @@ export default {
   opacity: 0;
   animation: app-panel-enter 1.2s forwards .55s;
   animation-iteration-count: 1;
+
   @media (--sm) {
     width: 100%;
     transform: translateY(calc(-1* var(--margin-t-quiz)));
   }
+
   @media (--xs) {
     align-items: flex-start;
     justify-content: center;
@@ -273,6 +286,11 @@ export default {
     text-align: center;
     overflow: hidden;
 
+    @media (--2xl) {
+      width: 460px;
+      height: 460px;
+    }
+
     @media (--xl) {
       justify-content: center;
     }
@@ -281,6 +299,7 @@ export default {
       width: 420px;
       height: 420px;
     }
+
     @media (--sm) {
       width: 100%;
       position: relative;
@@ -296,6 +315,16 @@ export default {
   }
 
   &__head {
+    @media (--sm) {
+      font-size: 14px;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @media (--sm) {
+      width: 90%;
+    }
+
     &>p {
       font-size: 20px;
       font-weight: 400;
@@ -306,16 +335,21 @@ export default {
       @media (--md) {
         font-size: 16px;
       }
-      @media (--sm) {
-        font-size: 14px;
+      @media (--xs) {
+        font-size: 13px;
       }
 
       &>span {
         font-size: 42px;
 
+        @media (--2xl) {
+          font-size: 38px;
+        }
+
         @media (--md) {
           font-size: 33px;
         }
+
         @media (--sm) {
           font-size: 27px;
         }
@@ -333,9 +367,10 @@ export default {
       .answer-3 & {
         font-size: 24px;
 
-        @media (--lg) {
+        @media (--2xl) {
           font-size: 21px;
         }
+
         @media (--xs) {
           font-size: 17px;
         }
@@ -351,6 +386,11 @@ export default {
       margin-top: 20px;
       margin-bottom: 20px;
 
+      @media (--2xl) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
       @media (--xs) {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -361,6 +401,10 @@ export default {
   &__desc {
     margin-bottom: 50px;
 
+    @media (--2xl) {
+      margin-bottom: 35px;
+    }
+
     @media (--lg) {
       margin-bottom: 20px;
     }
@@ -370,12 +414,12 @@ export default {
       font-size: 20px;
       line-height: 1.45;
 
-      @media (--lg) {
-        font-size: 20px;
+      @media (--2xl) {
+        font-size: 18px;
       }
 
       @media (--sm) {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       @media (--xs) {
@@ -401,13 +445,15 @@ export default {
         padding: 16px 11px;
         font-size: 14px;
       }
+
       @media (--xs) {
         padding: 10px 11px;
         font-size: 12px;
       }
+
       &:first-child {
-      margin-right: 10px;
-    }
+        margin-right: 10px;
+      }
     }
   }
 }

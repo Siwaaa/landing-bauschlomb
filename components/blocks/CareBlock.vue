@@ -64,19 +64,19 @@ export default {
       margin-bottom: 60px;
 
       @media (--2xl) {
-        font-size: 76px;
+        font-size: 63px;
       }
 
       @media (--xl) {
-        font-size: 64px;
+        font-size: 52px;
       }
 
       @media (--lg) {
-        font-size: 50px;
+        font-size: 42px;
       }
 
       @media (--md) {
-        font-size: 42px;
+        font-size: 30px;
       }
 
       @media (--xs) {
@@ -137,7 +137,7 @@ export default {
       object-fit: contain;
       margin-bottom: 15px;
 
-      @media (--xl) {
+      @media (--2xl) {
         height: 300px;
       }
 
@@ -161,8 +161,12 @@ export default {
       color: var(--color-blue);
       margin-bottom: 20px;
 
-      @media (--lg) {
+      @media (--2xl) {
         font-size: 20px;
+      }
+
+      @media (--lg) {
+        font-size: 18px;
       }
 
       @media (--xs) {

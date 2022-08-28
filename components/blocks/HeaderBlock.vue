@@ -10,8 +10,8 @@
           четкого зрения без бликов
           и ореолов, даже в условиях низкой освещенности<sup class="sub">1</sup>.</strong>
         <div class="header__btn">
-          <Button title="Подробнее" color="blue" @click.native="onModal('reg')"/>
-          <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')"/>
+          <Button title="Подробнее" color="blue" @click.native="onModal('reg')" />
+          <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')" />
         </div>
       </div>
       <div class="header__swiper header__circle">
@@ -53,7 +53,7 @@
 <script>
 import Button from '@/components/Button.vue';
 import Modal from '@/components/Modal.vue';
-import { Swiper, Thumbs } from 'swiper';
+import { Swiper, Thumbs, EffectFade } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
 export default {
@@ -68,7 +68,7 @@ export default {
       headerModal: false,
       typeModal: null
     }
-  },  
+  },
   methods: {
     onModal(component) {
       this.typeModal = component
@@ -76,7 +76,7 @@ export default {
     }
   },
   mounted() {
-    Swiper.use([Thumbs])
+    Swiper.use([Thumbs, EffectFade])
     /* eslint-disable no-unused-vars */
     const swiperBottom = new Swiper('.swiper-help', {
       loop: false,
@@ -101,11 +101,15 @@ export default {
       },
     })
     const swiper = new Swiper('.swiper-main', {
-      grabCursor: true,
+      // grabCursor: true,
       loop: true,
       slidesPerView: 1,
       spaceBetween: 10,
-      speed: 500,
+      speed: 1000,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
       thumbs: {
         swiper: swiperBottom,
       },
@@ -122,17 +126,18 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    @media (--xl) {
-      margin-top: calc(var(--nav-h) + 35px);
+    @media (--2xl) {
+      margin-top: calc(var(--nav-h) + 55px);
+      padding-bottom: 40px;
     }
 
     @media (--lg) {
       flex-direction: column;
+      margin-top: calc(var(--nav-h) + 35px);
     }
 
     @media (--xs) {
       margin-top: calc(var(--nav-h) + 15px);
-      padding-bottom: 40px;
     }
   }
 
@@ -158,6 +163,10 @@ export default {
       text-transform: capitalize;
       color: var(--color-blue);
       margin-bottom: 36px;
+
+      @media (--2xl) {
+        margin-bottom: 22px;
+      }
 
       @media (--lg) {
         margin-bottom: 18px;
@@ -222,7 +231,7 @@ export default {
     width: 52%;
     position: relative;
 
-    @media (--xl) {
+    @media (--2xl) {
       width: 48%;
     }
 
@@ -250,13 +259,13 @@ export default {
       height: 520px;
       background: url('@/assets/img/swiper/swiper_fon.png') center top / contain no-repeat;
 
-      @media (--xl) {
-        top: calc(var(--nav-h) - 80px);
+      @media (--2xl) {
+        width: 61%;
+        height: 400px;
+        top: calc(var(--nav-h) - 70px);
       }
 
       @media (--lg) {
-        width: 61%;
-        height: 400px;
         left: 10%;
       }
 
@@ -279,6 +288,7 @@ export default {
     text-align: center;
     margin-bottom: 60px;
     transition: transform .5s ease-in-out;
+
     &:hover {
       transform: translateY(8px);
     }
@@ -304,9 +314,14 @@ export default {
         transform: rotate(90deg) translateX(-2px);
         margin-left: 13px;
       }
+
+      @media (--2xl) {
+        font-size: 16px;
+      }
     }
 
   }
+
   &__circle {
     position: relative;
 
@@ -323,10 +338,12 @@ export default {
       @media (--2xl) {
         right: 4%;
       }
+
       @media (--md) {
         max-width: 50px;
         max-height: 50px;
       }
+
       @media (--sm) {
         max-width: 38px;
         max-height: 38px;
@@ -340,6 +357,11 @@ export default {
     margin-top: calc(var(--nav-h) + 20px);
     margin-bottom: 40px;
 
+    @media (--2xl) {
+      margin-top: var(--nav-h);
+      margin-bottom: 10px;
+    }
+
     @media (--lg) {
       margin-bottom: 20px;
     }
@@ -347,6 +369,10 @@ export default {
     & .swiper-slide {
       height: auto;
       padding-left: 17%;
+
+      @media (--2xl) {
+        padding-right: 5%;
+      }
 
       @media (--sm) {
         padding-left: 35%;
@@ -370,7 +396,7 @@ export default {
     width: calc(3.5 * var(--w-slide-help));
     margin-left: 17%;
 
-    @media (--xl) {
+    @media (--2xl) {
       --w-slide-help: 100px;
     }
 
