@@ -67,7 +67,7 @@ export default {
   margin-left: auto;
 
   &-main {
-    background-image: url(@/assets/img/061@2x.jpg);
+    background-image: url(@/assets/img/061.jpg);
   }
 
   &::before {
