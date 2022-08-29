@@ -27,11 +27,11 @@ export default {
   methods: {
     resizeMedInfo() {
       const screenWidth = document.documentElement.clientWidth;
-      if (process.client && screenWidth < 651) {
+      if (process.client && screenWidth < 636) {
         this.$refs.medinfo__text.style.removeProperty("transform");
       }
       else if (process.client) {
-        let perpx = screenWidth > 1440 ? 4545 : 2420;
+        let perpx = screenWidth > 1585 ? 4545 : 2420;
         let ratio = screenWidth / perpx;
         this.$refs.medinfo__text.style.transform = `scale( ${ratio}, 1.1 )`;
       }
