@@ -1,4 +1,4 @@
-@custom-media --2xl (max-width: 1600px);
+@custom-media --2xl (max-width: 1920px);
 @custom-media --xl (max-width: 1180px); 
 @custom-media --lg (max-width: 900px); 
 @custom-media --md (max-width: 768px); 

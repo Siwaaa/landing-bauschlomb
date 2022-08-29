@@ -109,7 +109,7 @@ export default {
 
   &__content {
     position: relative;
-    height: 1000px;
+    height: 860px;
     padding-top: var(--container-padding-h);
     padding-bottom: var(--container-padding-h);
 
