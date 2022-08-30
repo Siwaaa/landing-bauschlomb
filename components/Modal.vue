@@ -247,20 +247,25 @@ export default {
   align-items: center;
 
   &__input {
+    position: relative;
     width: 90%;
-    height: 60px;
-    border-bottom: 2px solid var(--color-blue);
-    font-weight: 400;
-    font-size: var(--fz-h3);
-    color: var(--color-black);
-    margin-bottom: 3vh;
-    cursor: auto;
+    padding-bottom: 3vh;
 
-    @media (--lg) {
-      height: 44px;
-    }
-    @media (--sm) {
-      height: 33px;
+    &-input {
+      width: 100%;
+      height: 60px;
+      border-bottom: 2px solid var(--color-blue);
+      font-weight: 400;
+      font-size: var(--fz-h3);
+      color: var(--color-black);
+      cursor: auto;
+
+      @media (--lg) {
+        height: 44px;
+      }
+      @media (--sm) {
+        height: 33px;
+      }
     }
   }
 
@@ -279,7 +284,7 @@ export default {
       font-size: 11px;
     }
 
-    &>input[type="radio"] {
+    &>input[type="checkbox"] {
       appearance: none;
       background-color: #fff;
       margin: 0;
@@ -324,6 +329,19 @@ export default {
           opacity: .8;
         }
       }
+    }
+  }
+  &__error {
+    position: absolute;
+    left: 0;
+    bottom: 1vh;
+    color: red;
+    font-size: 12px;
+
+    @media (--xs) {
+      position: relative;
+      bottom: 0;
+      font-size: 10px;
     }
   }
 }

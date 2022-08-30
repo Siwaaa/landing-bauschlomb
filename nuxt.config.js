@@ -30,7 +30,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/smoothScroll.js', mode: 'client' }
+    { src: '~/plugins/smoothScroll.js', mode: 'client' },
+    { src: '~/plugins/mask.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -40,7 +41,8 @@ export default {
   buildModules: [
     '@nuxt/postcss8',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    // '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

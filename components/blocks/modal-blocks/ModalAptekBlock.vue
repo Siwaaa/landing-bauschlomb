@@ -14,7 +14,7 @@
               loading="lazy">
           </a>
         </div>
-        <Slider v-model="valueSlider" orientation="vertical" ref="sliderEl"/>
+        <Slider v-model="valueSlider" orientation="vertical" ref="sliderEl" />
       </div>
       <Button title="Получить скидку" color="blue" imgLeft="sale.svg" @click.native="goToForm" />
       <p class="modal__aptek-desc">
@@ -34,16 +34,17 @@
         PureVision<sup class="sub">®</sup> 2</p>
     </div>
     <div class="modal__main">
-      <form action="" class="form">
-        <input class="form__input" type="tel" placeholder="+7">
-        <div class="form__check" style="margin-top: 10px; margin-bottom: 3vh">
-          <input type="radio" name="agree" id="agree">
+      <form class="form" @submit.prevent="sendForm">
+        <div class="form__input">
+          <input v-model="phoneData" v-phone ref="phoneEl" class="form__input-input" type="tel" placeholder="+7"
+            maxlength="18">
+          <span v-show="textError" class="form__error">{{  textError  }}</span>
+        </div>
+        <Button title="Зарегистрироваться" color="blue" type="submit" />
+        <div class="form__check">
+          <input v-model="checkedRules" type="checkbox" name="agree" id="agree">
           <label for="agree">Я ознакомлен с <a href="">условиями пользования сайтом</a>,<br>согласен с <a
               href="">Условиями обработки персональных данных</a> <br>и <a href="">Правилами программы</a></label>
-        </div>
-        <div class="form__btns">
-          <Button title="Назад" imgLeft="left_small.svg" @click.native="goToAptek" />
-          <Button title="Зарегистрироваться" color="blue" />
         </div>
       </form>
     </div>
@@ -148,34 +149,16 @@ export default {
           link: 'https://linzispb.ru/products/purevision_2hd'
         },
         {
-          title: 'Ronos',
-          img: 'logo_cronosoptika',
+          title: 'Мастероптик',
+          img: 'logo_master',
           sale: false,
-          link: ''
-        },
-        {
-          title: 'Браво оптика',
-          img: 'logo_bravooptika',
-          sale: false,
-          link: ''
-        },
-        {
-          title: 'Культура зрения',
-          img: 'logo_culturazreniya',
-          sale: false,
-          link: ''
+          link: 'https://masteroptik.ru/catalog/kontaktnye_linzy/pure_vision_2_hd/'
         },
         {
           title: 'glavlinza',
           img: 'logo_glavlinza',
           sale: false,
           link: 'https://www.glavlinza.ru/kontaktnye-linzy-purevision-2-hd-6-linz-p-988.html'
-        },
-        {
-          title: 'inoptika',
-          img: 'logo_inoptika',
-          sale: false,
-          link: ''
         },
         {
           title: 'lensgo',
@@ -190,24 +173,6 @@ export default {
           link: 'https://linzacity.ru/contact-lenses/extended_wear/pure-vision-2-6pk-kontaktnye-linzy/'
         },
         {
-          title: 'linzipenzi',
-          img: 'logo_linzipenzi',
-          sale: false,
-          link: ''
-        },
-        {
-          title: 'Линзы Питер',
-          img: 'logo_linzipiter',
-          sale: false,
-          link: ''
-        },
-        {
-          title: 'Лорнет',
-          img: 'logo_lornet',
-          sale: false,
-          link: ''
-        },
-        {
           title: 'Очкарик',
           img: 'logo_ochkarik',
           sale: false,
@@ -220,40 +185,16 @@ export default {
           link: 'https://www.ochkov.net/linzy-na-mesyats/opticheskie/purevision-2.htm'
         },
         {
-          title: 'Оптик-а',
-          img: 'logo_optik-a',
-          sale: false,
-          link: ''
-        },
-        {
-          title: 'Оптика фаворит',
-          img: 'logo_optikafavorit-2',
-          sale: false,
-          link: ''
-        },
-        {
           title: 'Оптика фаворитс',
           img: 'logo_optikafavorit',
           sale: false,
           link: 'https://www.optika-favorit.ru/catalog/contact_lenses/replacement/104280/'
         },
         {
-          title: 'pervayasamarskaya',
-          img: 'logo_pervayasamarskaya',
-          sale: false,
-          link: ''
-        },
-        {
           title: 'Счастливый взгляд',
           img: 'logo_shastlivyvzglyad',
           sale: false,
           link: 'https://happylook.ru/catalog/contact_lenses/pure_vision_2_hd_6/'
-        },
-        {
-          title: 'Склад линз',
-          img: 'logo_skladlinz',
-          sale: false,
-          link: ''
         },
         {
           title: 'viplinza',
@@ -268,18 +209,15 @@ export default {
           link: 'https://www.wildberries.ru/catalog/10095926/detail.aspx?targetUrl=BP'
         },
         {
-          title: 'Яндекс маркет',
-          img: 'logo_yandexmarket',
-          sale: false,
-          link: ''
-        },
-        {
           title: 'zzrenie',
           img: 'logo_zzrenie',
           sale: false,
           link: 'https://z-zrenie.ru/catalog/kontaktnye-linzy/purevision-2-6-linz/'
         },
-      ]
+      ],
+      phoneData: null,
+      textError: '',
+      checkedRules: false
     }
   },
   computed: {
@@ -293,11 +231,29 @@ export default {
     },
     goToAptek() {
       this.showAptek = true
+    },
+    validateSubmit() {
+      if (this.phoneData.length < 18) {
+        this.textError = 'Пожалуйста, укажите верный номер телефона'
+        return false
+      }
+
+      if (!this.checkedRules) {
+        this.textError = 'Пожалуйста, отметьте, что согласны с правилами сайта'
+        return false
+      }
+
+      this.textError = ''
+      return true
+    },
+    sendForm() {
+      if (!this.validateSubmit()) return false
+      alert(this.phoneData)
     }
   },
   mounted() {
     this.$refs.apteks.addEventListener('scroll', e => {
-      if(!this.$refs.sliderEl.$el.classList.contains('p-slider-sliding')) {
+      if (!this.$refs.sliderEl.$el.classList.contains('p-slider-sliding')) {
         const k = (100 * e.target.scrollTop) / (this.scrollHeight - 400)
         this.valueSlider = 100 - Math.trunc(k)
       }
@@ -305,7 +261,7 @@ export default {
   },
   watch: {
     valueSlider(oldVal, newVal) {
-      if((newVal % 2 == 0) && this.$refs.sliderEl.$el.classList.contains('p-slider-sliding')) {
+      if ((newVal % 2 == 0) && this.$refs.sliderEl.$el.classList.contains('p-slider-sliding')) {
         // 1 вариант
         // const k = Math.trunc(this.scrollHeight / 400)
         // this.$refs.apteks.style.transform = `translateY(${(newVal - 101) * k}%)`
@@ -335,9 +291,11 @@ export default {
       padding: 20px;
       justify-content: center;
     }
+
     @media (--sm) {
       height: 720px;
     }
+
     @media (--xs) {
       height: 690px;
     }
@@ -419,12 +377,16 @@ export default {
   flex-wrap: wrap;
   flex-basis: 96%;
   overflow-y: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+
+  /* Firefox */
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
     display: none;
   }
+
   /* transition: transform .3s ease-in-out; */
 
   &__item {
