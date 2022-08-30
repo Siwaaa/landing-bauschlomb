@@ -1,3 +1,5 @@
+import {json} from 'body-parser'
+
 export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -33,6 +35,10 @@ export default {
     { src: '~/plugins/smoothScroll.js', mode: 'client' },
     { src: '~/plugins/mask.js', mode: 'client' }
   ],
+  serverMiddleware: [
+    // { path: "/api", handler: json() },
+    // { path: "/api", handler: "~/server-middleware/api-server.js" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,13 +47,12 @@ export default {
   buildModules: [
     '@nuxt/postcss8',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/svg',
-    // '@nuxtjs/composition-api/module'
+    '@nuxtjs/svg'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'primevue/nuxt'
+    'primevue/nuxt',
   ],
 
   // Fonts Google options: https://google-fonts.nuxtjs.org/options

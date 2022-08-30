@@ -12,7 +12,7 @@
             maxlength="18">
           <span v-show="textError" class="form__error">{{  textError  }}</span>
         </div>
-        <Button title="Зарегистрироваться" color="blue" type="submit" />
+        <Button title="Зарегистрироваться" color="blue" type="submit" id="sdf"/>
         <div class="form__check">
           <input v-model="checkedRules" type="checkbox" name="agree" id="agree">
           <label for="agree">Я ознакомлен с <a href="">условиями пользования сайтом</a>,<br>согласен с <a
@@ -34,7 +34,8 @@ export default {
     return {
       phoneData: null,
       textError: '',
-      checkedRules: false
+      checkedRules: false,
+      operationAPI: 'start'
     }
   },
   methods: {
@@ -52,9 +53,20 @@ export default {
       this.textError = ''
       return true
     },
-    sendForm() {
+    async sendForm() {
       if (!this.validateSubmit()) return false
-      alert(this.phoneData)
+      const data = {
+        phone: this.phoneData,
+        operation: this.operationAPI
+      }
+      const res = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      console.log(await res.json());
     }
   }
 }
