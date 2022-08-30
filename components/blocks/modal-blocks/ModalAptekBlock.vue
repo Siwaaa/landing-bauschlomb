@@ -14,7 +14,7 @@
               loading="lazy">
           </a>
         </div>
-        <Slider v-model="valueSlider" orientation="vertical" />
+        <Slider v-model="valueSlider" orientation="vertical" ref="sliderEl"/>
       </div>
       <Button title="Получить скидку" color="blue" imgLeft="sale.svg" @click.native="goToForm" />
       <p class="modal__aptek-desc">
@@ -67,85 +67,85 @@ export default {
           title: 'Здравсити',
           img: 'logo_zdravcity',
           sale: false,
-          link: ''
+          link: 'https://zdravcity.ru/p_linzy-kontaktnye-purevision2-hd-8-6-3-75-6sht-0161242.html'
         },
         {
           title: 'Яндекс Маркет',
           img: 'logo_yandexmarket-2',
           sale: false,
-          link: ''
+          link: 'https://market.yandex.ru/product--kontaktnye-linzy-bausch-lomb-purevision-2-hd-6-sht/1717790287?glfilter=27144251%3A28719085_100304721477&cpa=1&cpc=qOtYFLSDyB8KXxTDf5uxzeA7WM8VV7wPNJM8O8nJ_mNLtDQW9jtMC_YmF8YFK3NXTegwb1Jo-ejVTRSYpuQukj4X4Io-258Qx6rE4o-2AVNi7B0mRsGHMYmBCd6zJw8dojaRXAbWLEa0Iu4g2a54XzuPspKoiDV_-hjKuX5Rcg_rs_6JE6tptw%2C%2C&sku=100304721477&offerid=qVxhPeOmbM8uB6ThRlJBEA'
         },
         {
           title: 'ЕАптека',
           img: 'logo_eapteka',
           sale: false,
-          link: ''
+          link: 'https://www.eapteka.ru/goods/id273250/'
         },
         {
           title: 'Glazburg',
           img: 'logo_glazburg',
           sale: false,
-          link: ''
+          link: 'https://glazburg.ru/kontaktnye-linzy/pure-vision-2-hd'
         },
         {
           title: 'Ozon',
           img: 'logo_ozon',
           sale: false,
-          link: ''
+          link: 'https://www.ozon.ru/product/bausch-lomb-kontaktnye-linzy-pure-vision-2-6sht-8-6-3-00-19742048/?_bctx=CAMQzpi1CQ&asb=lz9Q6%252F%252BEtVgoaN1SQwbnUwqtitpoqXLUOI7nGSrNq2k%253D&asb2=rJoe23PIj5hqMK0135VDbOGTU-cTZm8fohWnUrNowdHiZlCWzDyp4DehNRcvo8pi&sh=_baKQ7pCVg'
         },
         {
           title: 'Линзы Москвы',
           img: 'logo_linzimoskvi',
           sale: false,
-          link: ''
+          link: 'https://kupit-linzi-msk.ru/shop/pure-vision-2'
         },
         {
-          title: '2 парлинз',
+          title: '2 паралинз',
           img: 'logo_2parlinz',
           sale: false,
-          link: ''
+          link: 'https://www.para-linz.ru/product_info.php?manufacturers_id=4&products_id=201&osCsid=p8knd1tgrtbccf408i8eh11sr7'
         },
         {
           title: 'Оптимист оптика',
           img: 'logo_optimist',
           sale: false,
-          link: ''
+          link: 'https://optimistoptica.ru/kontaktnye_linzy/pure_vision_2_bausch_lomb_6_linz.html'
         },
         {
           title: 'Перекресток Впрок',
           img: 'logo_vprok',
           sale: false,
-          link: ''
+          link: 'https://www.vprok.ru/product/purevision-kl-pure-vision2-6pk8-6-3-00--982023'
         },
         {
           title: 'Apteka.ru',
           img: 'logo_aptekaru',
           sale: false,
-          link: ''
+          link: 'https://apteka.ru/product/bauschlomb-pure-vision-2-kontaktnye-linzy-planovoj-zameny-375-6-sht-5e327594f5a9ae000140e750/'
         },
         {
           title: 'Линз Курьер',
           img: 'logo_linzkuryer',
           sale: false,
-          link: ''
+          link: 'https://linzkurier.ru/catalog/kontaktnye_linzy/brendy_1/pure_vision_/1052142/?oid=1052610'
         },
         {
           title: 'NetOptika',
           img: 'logo_netoptika',
           sale: false,
-          link: ''
+          link: 'https://www.netoptika.ru/product/purevision2hd/'
         },
         {
           title: 'Линзочки',
           img: 'logo_linzochki',
           sale: false,
-          link: ''
+          link: 'http://linz-ochki.ru/internet-magazin?mode=product&product_id=125337203'
         },
         {
           title: 'linzispb',
           img: 'logo_linzispb',
           sale: false,
-          link: ''
+          link: 'https://linzispb.ru/products/purevision_2hd'
         },
         {
           title: 'Ronos',
@@ -169,7 +169,7 @@ export default {
           title: 'glavlinza',
           img: 'logo_glavlinza',
           sale: false,
-          link: ''
+          link: 'https://www.glavlinza.ru/kontaktnye-linzy-purevision-2-hd-6-linz-p-988.html'
         },
         {
           title: 'inoptika',
@@ -181,13 +181,13 @@ export default {
           title: 'lensgo',
           img: 'logo_lensgo',
           sale: false,
-          link: ''
+          link: 'https://lensgo.ru/kontaktnye-linzy/obychnye/purevision-2-6-linz'
         },
         {
           title: 'linzacity',
           img: 'logo_linzacity',
           sale: false,
-          link: ''
+          link: 'https://linzacity.ru/contact-lenses/extended_wear/pure-vision-2-6pk-kontaktnye-linzy/'
         },
         {
           title: 'linzipenzi',
@@ -211,13 +211,13 @@ export default {
           title: 'Очкарик',
           img: 'logo_ochkarik',
           sale: false,
-          link: ''
+          link: 'https://ochkarik.ru/contaktnie-linzy/pure-vision-2-hd/3307625/'
         },
         {
           title: 'ochkovnet',
           img: 'logo_ochkovnet',
           sale: false,
-          link: ''
+          link: 'https://www.ochkov.net/linzy-na-mesyats/opticheskie/purevision-2.htm'
         },
         {
           title: 'Оптик-а',
@@ -235,7 +235,7 @@ export default {
           title: 'Оптика фаворитс',
           img: 'logo_optikafavorit',
           sale: false,
-          link: ''
+          link: 'https://www.optika-favorit.ru/catalog/contact_lenses/replacement/104280/'
         },
         {
           title: 'pervayasamarskaya',
@@ -247,7 +247,7 @@ export default {
           title: 'Счастливый взгляд',
           img: 'logo_shastlivyvzglyad',
           sale: false,
-          link: ''
+          link: 'https://happylook.ru/catalog/contact_lenses/pure_vision_2_hd_6/'
         },
         {
           title: 'Склад линз',
@@ -259,13 +259,13 @@ export default {
           title: 'viplinza',
           img: 'logo_viplinza',
           sale: false,
-          link: ''
+          link: 'https://viplinza.ru/BAUSCH-LOMB/PureVision-2-HD'
         },
         {
           title: 'wildberries',
           img: 'logo_wildberries',
           sale: false,
-          link: ''
+          link: 'https://www.wildberries.ru/catalog/10095926/detail.aspx?targetUrl=BP'
         },
         {
           title: 'Яндекс маркет',
@@ -277,7 +277,7 @@ export default {
           title: 'zzrenie',
           img: 'logo_zzrenie',
           sale: false,
-          link: ''
+          link: 'https://z-zrenie.ru/catalog/kontaktnye-linzy/purevision-2-6-linz/'
         },
       ]
     }
@@ -296,12 +296,23 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$refs['container-aptek'].offsetHeight);
+    this.$refs.apteks.addEventListener('scroll', e => {
+      if(!this.$refs.sliderEl.$el.classList.contains('p-slider-sliding')) {
+        const k = (100 * e.target.scrollTop) / (this.scrollHeight - 400)
+        this.valueSlider = 100 - Math.trunc(k)
+      }
+    })
   },
   watch: {
     valueSlider(oldVal, newVal) {
-      const k = Math.trunc(this.scrollHeight / 400)
-      this.$refs.apteks.style.transform = `translateY(${(newVal - 101) * k}%)`
+      if((newVal % 2 == 0) && this.$refs.sliderEl.$el.classList.contains('p-slider-sliding')) {
+        // 1 вариант
+        // const k = Math.trunc(this.scrollHeight / 400)
+        // this.$refs.apteks.style.transform = `translateY(${(newVal - 101) * k}%)`
+        // 2 вариант
+        const k = (this.scrollHeight - 400) / 100
+        this.$refs.apteks.scrollTop = (100 - newVal) * k
+      }
     }
   }
 }
@@ -353,9 +364,6 @@ export default {
     max-height: 400px;
     margin-bottom: 3vh;
     overflow: hidden;
-    /* -ms-overflow-style: none;
-    &::-webkit-scrollbar { width: 0; }
-    &{ overflow: -moz-scrollbars-none; } */
 
     .p-slider {
       width: 2px;
@@ -410,6 +418,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 96%;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
   /* transition: transform .3s ease-in-out; */
 
   &__item {

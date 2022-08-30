@@ -68,6 +68,9 @@ export default {
 
   &-main {
     background-image: url(@/assets/img/061.jpg);
+    @media (min-resolution: 2dppx) {
+      background-image: url("@/assets/img/061@2x.jpg");
+    }
   }
 
   &::before {
