@@ -131,6 +131,11 @@ export default {
       padding-bottom: 40px;
     }
 
+    @media (--650h) {
+      margin-top: calc(var(--nav-h) + 25px);
+      padding-bottom: 40px;
+    }
+
     @media (--lg) {
       flex-direction: column;
       margin-top: calc(var(--nav-h) + 35px);
@@ -184,6 +189,9 @@ export default {
         width: 100%;
         margin-bottom: 18px;
       }
+      @media (--650h) {
+        margin-bottom: 20px;
+      }
     }
 
     &>strong {
@@ -233,6 +241,9 @@ export default {
 
     @media (--2xl) {
       width: 48%;
+    }
+    @media (--650h) {
+      width: 45%;
     }
 
     @media (--lg) {
@@ -398,6 +409,10 @@ export default {
 
     @media (--2xl) {
       --w-slide-help: 100px;
+    }
+
+    @media (--650h) {
+      --w-slide-help: 86px;
     }
 
     @media (--lg) {

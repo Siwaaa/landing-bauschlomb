@@ -141,7 +141,9 @@ export default {
         @media (--2xl) {
           height: 26px;
         }
-
+        @media (--650h) {
+          height: 21px;
+        }
         @media (--lg) {
           height: 21px;
         }
