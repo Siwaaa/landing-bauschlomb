@@ -1,7 +1,7 @@
 import {json} from 'body-parser'
 
 export default {
-  target: 'static',
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Bausch & Lomb',
@@ -36,8 +36,10 @@ export default {
     { src: '~/plugins/mask.js', mode: 'client' }
   ],
   serverMiddleware: [
-    // { path: "/api", handler: json() },
-    // { path: "/api", handler: "~/server-middleware/api-server.js" },
+    // read about redirect-ssl: https://github.com/unjs/redirect-ssl
+    // "redirect-ssl",
+    { path: "/api", handler: json() },
+    { path: "/api", handler: "~/server-middleware/api-server.js" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

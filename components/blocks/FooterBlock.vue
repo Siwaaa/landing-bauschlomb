@@ -18,17 +18,18 @@
           исключительно для физических и юридических лиц из России, если не указано иное.</p>
         <p>
           1. Koh S., Maeda N., Hamad T., Nishida K. Efficacy of spherical aberration correction based on contact lens
-          power, Contact Lens& Anterior Eye, 2014, № 37б с. 273-277.
+          power, Contact Lens& Anterior Eye, 2014, № 37б с. 273−277.
           <br>
           2. Turhan, S., & Toker, E. (2015). Optical coherence tomography to evaluate the interaction of different edge
           designs of four different silicone hydrogel lenses with the ocular surface. Clinical Ophthalmology, 935.
           <br>
           3. Brennan, N. A., Coles, M. L. C., Comstock, T. L., & Levy, B. (2002). A 1-year prospective clinical trial of
           balafilcon a (purevision) silicone-hydrogel contact lenses used on a 30-day continuous wear schedule.
-          Ophthalmology, 109(6), 1172-1177.
+          Ophthalmology, 109(6), 1172−1177.
+          © BAUSCH & LOMB INCORPORATED. Вся информация и материалы, размещенные на этом сайте, предназначены исключительно для физических и юридических лиц из России, если не указано иное.
         </p>
         <p>
-          Bausch+Lomb PureVision 2 — Медицинское изделие. Рег. Уд. № ФСЗ 2011/09 600 от 01.04.2020 г. Линзы контактные мягкие для коррекции зрения Bausch+Lomb PureVision 2 (balafilcon A)
+          Bausch+Lomb PureVision 2 — Медицинское изделие. Рег. Уд. № ФСЗ 2011/09 600 от 01.04.2020 г. Линзы контактные мягкие для коррекции зрения Bausch+Lomb PureVision 2 (balafilcon A)
           <br>
           ReNu MultiPlus — Медицинское изделие. Рег. Уд. № ФСЗ 2007/00771 от 11.06.2021 г. Раствор универсальный
           стерильный по уходу за мягкими контактными линзами Реню МультиПлюс (ReNu MultiPlus) с контейнером для хранения
