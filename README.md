@@ -20,5 +20,6 @@ $ npm run dev
 
 ```sh
 # start SSR
+$ npm run build
 $ npm run start
 ```
