@@ -4,9 +4,9 @@
     <div class="header__content">
       <div class="header__info">
         <h1> PureVision<sup class="sub">®</sup> 2</h1>
-        <p>Меньше неприятных сюрпризов на дороге благодаря особой форме контактных линз PureVision<sup
+        <p>Меньше неприятных сюрпризов на дороге благодаря особой форме линз с высокой четкости зрения PureVision<sup
             class="sub">®</sup> 2 и множество приятных – в программе лояльности Bausch + Lomb FRIENDS!<sup
-            class="sub">*</sup></p>
+            class="sub">*</sup> </p>
         <p>Зарегистрируйтесь, получите 250 приветственных баллов и обменяйте их на скидку 500 ₽<sup
             class="sub">**</sup>.</p>
         <div class="header__btn">
@@ -185,7 +185,7 @@ export default {
 
   &__img {
     width: 50%;
-    
+
     @media (--2xl) {
       width: 45%;
     }
@@ -216,6 +216,7 @@ export default {
     @media (--2xl) {
       padding-top: 20px;
     }
+
     @media (--lg) {
       padding-top: 0;
     }
@@ -321,6 +322,7 @@ export default {
       margin-right: auto;
       margin-left: auto;
     }
+
     @media (--sm) {
       width: 90%;
     }
@@ -335,6 +337,7 @@ export default {
       @media (--md) {
         font-size: 16px;
       }
+
       @media (--xs) {
         font-size: 13px;
       }
