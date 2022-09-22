@@ -3,7 +3,7 @@
     <div class="modal__header" id="modalTitle">
       <h2>Зарегистрируйтесь <br> в программе лояльности,<br>и получите 250 баллов<sup class="sub">*</sup></h2>
       <p>Которые вы сможете обменять на промокод <br> на скидку 500 ₽ и использовать его при покупке контактных линз
-        PureVision<sup class="sub">®</sup> 2</p>
+        Bausch+Lomb ULTRA<sup class="sub">®</sup></p>
     </div>
     <div class="modal__main">
       <form v-if="formType === 'number'" class="form" @submit.prevent="getMeCode">

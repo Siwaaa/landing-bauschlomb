@@ -7,7 +7,7 @@
             и позволяет слезе легко попадать под линзу<sup class="sub">2</sup>.</p>
         </div>
         <div class="utp__items-item"><img src="@/assets/img/utp-2.svg" alt="" />
-          <p>Контактные линзы хорошо <br> держат форму и удобны <br> в обращении<sup class="sub">3</sup>.</p>
+          <p>Контактные линзы обеспечивают <br> комфорт при надевании <br> и в конце дня<sup class="sub">2</sup>.</p>
         </div>
       </div>
       <div class="utp__btn">

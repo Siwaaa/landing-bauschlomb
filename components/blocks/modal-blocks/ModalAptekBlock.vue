@@ -2,7 +2,7 @@
   <div v-if="showAptek" ref="container-aptek" class="modal__content modal-aptek">
     <div class="modal__header" id="modalTitle">
       <h2>Выберите, где приобрести <br>
-        <strong>PureVision<sup class="sub">®</sup> 2</strong>
+        <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong>
       </h2>
     </div>
     <div class="modal__main">
@@ -31,7 +31,7 @@
       <h2>Зарегистрируйтесь <br> в программе лояльности,<br>и получите 250 баллов<sup class="sub">*</sup></h2>
       <p id="p-reg">Которые вы сможете обменять на промокод <br> на скидку 500 ₽ и использовать его при покупке
         контактных линз
-        PureVision<sup class="sub">®</sup> 2</p>
+        Bausch+Lomb ULTRA<sup class="sub">®</sup></p>
     </div>
     <div class="modal__main">
       <form v-if="formType === 'number'" class="form" @submit.prevent="getMeCode">
@@ -40,11 +40,14 @@
             maxlength="18">
           <span v-show="textError" class="form__error">{{ textError }}</span>
         </div>
-        <Button title="Зарегистрироваться" color="blue" type="submit" id="sdf" />
         <div class="form__check">
           <input v-model="checkedRules" type="checkbox" name="agree" id="agree">
           <label for="agree">Я ознакомлен с <a href="">условиями пользования сайтом</a>,<br>согласен с <a
               href="">Условиями обработки персональных данных</a> <br>и <a href="">Правилами программы</a></label>
+        </div>
+        <div class="form__btns">
+          <Button title="Назад" color="white" type="button" imgLeft="left_small.svg" @click.native="goToAptek" />
+          <Button title="Зарегистрироваться" color="blue" type="submit" id="sdf" />
         </div>
       </form>
       <form v-else class="form" @submit.prevent="setMeCode">
@@ -72,155 +75,197 @@ export default {
       valueSlider: 100,
       currentTranslate: 0,
       aptekList: [
-        {
-          title: 'Здравсити',
-          img: 'logo_zdravcity',
-          sale: false,
-          link: 'https://zdravcity.ru/p_linzy-kontaktnye-purevision2-hd-8-6-3-75-6sht-0161242.html'
-        },
+        // {
+        //   title: 'Здравсити',
+        //   img: 'logo_zdravcity',
+        //   sale: false,
+        //   link: 'https://zdravcity.ru/p_linzy-kontaktnye-purevision2-hd-8-6-3-75-6sht-0161242.html'
+        // },
         {
           title: 'Яндекс Маркет',
           img: 'logo_yandexmarket-2',
           sale: false,
-          link: 'https://market.yandex.ru/product--kontaktnye-linzy-bausch-lomb-purevision-2-hd-6-sht/1717790287?glfilter=27144251%3A28719085_100304721477&cpa=1&cpc=qOtYFLSDyB8KXxTDf5uxzeA7WM8VV7wPNJM8O8nJ_mNLtDQW9jtMC_YmF8YFK3NXTegwb1Jo-ejVTRSYpuQukj4X4Io-258Qx6rE4o-2AVNi7B0mRsGHMYmBCd6zJw8dojaRXAbWLEa0Iu4g2a54XzuPspKoiDV_-hjKuX5Rcg_rs_6JE6tptw%2C%2C&sku=100304721477&offerid=qVxhPeOmbM8uB6ThRlJBEA'
+          link: 'https://market.yandex.ru/product--kontaktnye-linzy-bausch-lomb-ultra-6-sht/1717054670?glfilter=27144251%3A28719188_100368008994&cpc=AuMiSb55R33mdqG2JJjpy65-c8X-FClXLgFastHKaAvP696uMHNkkzBp-TJWlKI0pgGCUxNENAdIGlFYcUdlRicMrWrDG6gWVOSrY7eexAL5xF-JVnOT019qTvyT1CQ89a7_joJv3p39CpRgLoN2DGLxDqGhLGX8wJbuCjaIOO9qWGs08g1vVRxt89kfJqwd&from-show-uid=16636880638894168184900004&sku=100368008994&do-waremd5=PL9NO3OPVCqzVJUWTXAC_A&sponsored=1&cpa=1'
         },
         {
           title: 'ЕАптека',
           img: 'logo_eapteka',
           sale: false,
-          link: 'https://www.eapteka.ru/goods/id273250/'
+          link: 'https://www.eapteka.ru/goods/id513473/'
         },
-        {
-          title: 'Glazburg',
-          img: 'logo_glazburg',
-          sale: false,
-          link: 'https://glazburg.ru/kontaktnye-linzy/pure-vision-2-hd'
-        },
+        // {
+        //   title: 'Glazburg',
+        //   img: 'logo_glazburg',
+        //   sale: false,
+        //   link: 'https://glazburg.ru/kontaktnye-linzy/pure-vision-2-hd'
+        // },
         {
           title: 'Ozon',
           img: 'logo_ozon',
           sale: false,
-          link: 'https://www.ozon.ru/product/bausch-lomb-kontaktnye-linzy-pure-vision-2-6sht-8-6-3-00-19742048/?_bctx=CAMQzpi1CQ&asb=lz9Q6%252F%252BEtVgoaN1SQwbnUwqtitpoqXLUOI7nGSrNq2k%253D&asb2=rJoe23PIj5hqMK0135VDbOGTU-cTZm8fohWnUrNowdHiZlCWzDyp4DehNRcvo8pi&sh=_baKQ7pCVg'
+          link: 'https://www.ozon.ru/product/silikon-gidrogelevye-kontaktnye-linzy-bausch-lomb-ultra-8-5-3-5-6-sht-152577544/?asb=vzivIn8cNNKUcL77QshR9KZ4%252BlIeIRZ5lUFgvDAJHto%253D&asb2=uyIaSatxqPPRJhxkaaBhnCfOKbq_5GrHpgdWtJ8kP9gbZdrTqiOFYQISrR0B92GR&keywords=%D0%BB%D0%B8%D0%BD%D0%B7%D1%8B+%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5+bausch+lomb+ultra&sh=x8jzkftD3w'
         },
         {
           title: 'Линзы Москвы',
           img: 'logo_linzimoskvi',
           sale: false,
-          link: 'https://kupit-linzi-msk.ru/shop/pure-vision-2'
+          link: 'https://kupit-linzi-msk.ru/shop/ultra-6pk'
         },
         {
           title: '2 паралинз',
           img: 'logo_2parlinz',
           sale: false,
-          link: 'https://www.para-linz.ru/product_info.php?manufacturers_id=4&products_id=201&osCsid=p8knd1tgrtbccf408i8eh11sr7'
+          link: 'https://www.para-linz.ru/bausch-lomb-ultra-3pk'
         },
         {
           title: 'Оптимист оптика',
           img: 'logo_optimist',
           sale: false,
-          link: 'https://optimistoptica.ru/kontaktnye_linzy/pure_vision_2_bausch_lomb_6_linz.html'
+          link: 'https://optimistoptica.ru/kontaktnye_linzy/bausch_lomb_ultra_6_linz.html'
         },
-        {
-          title: 'Перекресток Впрок',
-          img: 'logo_vprok',
-          sale: false,
-          link: 'https://www.vprok.ru/product/purevision-kl-pure-vision2-6pk8-6-3-00--982023'
-        },
+        // {
+        //   title: 'Перекресток Впрок',
+        //   img: 'logo_vprok',
+        //   sale: false,
+        //   link: 'https://www.vprok.ru/product/purevision-kl-pure-vision2-6pk8-6-3-00--982023'
+        // },
         {
           title: 'Apteka.ru',
           img: 'logo_aptekaru',
           sale: false,
-          link: 'https://apteka.ru/product/bauschlomb-pure-vision-2-kontaktnye-linzy-planovoj-zameny-375-6-sht-5e327594f5a9ae000140e750/'
+          link: 'https://apteka.ru/search/?q=Bausch+%2B+Lomb+Utra'
         },
         {
           title: 'Линз Курьер',
           img: 'logo_linzkuryer',
           sale: false,
-          link: 'https://linzkurier.ru/catalog/kontaktnye_linzy/brendy_1/pure_vision_/1052142/?oid=1052610'
+          link: 'https://linzkurier.ru/catalog/kontaktnye_linzy/proizvoditeli/bausch_lomb/1052132/?oid=1056751'
         },
         {
           title: 'NetOptika',
           img: 'logo_netoptika',
           sale: false,
-          link: 'https://www.netoptika.ru/product/purevision2hd/'
+          link: 'https://www.netoptika.ru/product/kontaktnye-linzy-ultra-3-linzy/'
         },
         {
           title: 'Линзочки',
           img: 'logo_linzochki',
           sale: false,
-          link: 'http://linz-ochki.ru/internet-magazin?mode=product&product_id=125337203'
+          link: 'http://linz-ochki.ru/internet-magazin?mode=product&product_id=1296983803'
+        },
+        {
+          title: 'Склад линз',
+          img: 'logo_skladlinz',
+          sale: false,
+          link: 'https://apteka.ru/product/630ccceb50015d9c6751ad5c/'
+        },
+        {
+          title: 'Браво оптика',
+          img: 'logo_bravooptika',
+          sale: false,
+          link: 'https://bravo-optica.ru/catalog/linzy-kontaktnye/ultra-3/?oid=268411'
+        },
+        {
+          title: 'Линзы Пензы',
+          img: 'logo_linzipenzi',
+          sale: false,
+          link: 'https://linzipenzi.ru/ezhemesyachnye/ultra-3-linzy/'
+        },
+        {
+          title: 'Культура зрения',
+          img: 'logo_culturazreniya',
+          sale: false,
+          link: 'https://culturavision.com/lenses/1-mesyats/ultra-6pk/'
         },
         {
           title: 'linzispb',
           img: 'logo_linzispb',
           sale: false,
-          link: 'https://linzispb.ru/products/purevision_2hd'
+          link: 'https://linzispb.ru/products/ultra-6pk'
         },
         {
           title: 'Мастероптик',
           img: 'logo_master',
           sale: false,
-          link: 'https://masteroptik.ru/catalog/kontaktnye_linzy/pure_vision_2_hd/'
+          link: 'https://masteroptik.ru/catalog/kontaktnye_linzy/bausch_lomb_ultra_3sht_/'
         },
         {
           title: 'glavlinza',
           img: 'logo_glavlinza',
           sale: false,
-          link: 'https://www.glavlinza.ru/kontaktnye-linzy-purevision-2-hd-6-linz-p-988.html'
+          link: 'https://www.glavlinza.ru/kontaktnye-linzy-bauschlomb-ultra-6-sht-p-6703.html'
         },
         {
           title: 'lensgo',
           img: 'logo_lensgo',
           sale: false,
-          link: 'https://lensgo.ru/kontaktnye-linzy/obychnye/purevision-2-6-linz'
+          link: 'https://lensgo.ru/kontaktnye-linzy/obychnye/ultra-3-linzy'
         },
         {
           title: 'linzacity',
           img: 'logo_linzacity',
           sale: false,
-          link: 'https://linzacity.ru/contact-lenses/extended_wear/pure-vision-2-6pk-kontaktnye-linzy/'
+          link: 'https://linzacity.ru/contact-lenses/monthly_disposable/ultra-3pk-kontaktnye-linzy/'
         },
         {
           title: 'Очкарик',
           img: 'logo_ochkarik',
           sale: false,
-          link: 'https://ochkarik.ru/contaktnie-linzy/pure-vision-2-hd/3307625/'
+          link: 'https://ochkarik.ru/contaktnie-linzy/ultra-3-linzy-/'
+        },
+        {
+          title: 'Оптик-а',
+          img: 'logo_optik-a',
+          sale: false,
+          link: 'https://optik-a.net/shop/kontacts-linz/ejemesechnie-linzi/ultra-6-linz/'
+        },
+        {
+          title: 'Лорнет',
+          img: 'logo_lornet',
+          sale: false,
+          link: 'https://lornet-optic.ru/obychnye-linzy/ezhemesyachnye/bausch-lomb-ultra-3-sht'
+        },
+        {
+          title: 'Иноптика',
+          img: 'logo_inoptika',
+          sale: false,
+          link: 'https://www.inoptika.ru/product/kontaktnye-linzy-ultra-3-linzy/'
         },
         {
           title: 'ochkovnet',
           img: 'logo_ochkovnet',
           sale: false,
-          link: 'https://www.ochkov.net/linzy-na-mesyats/opticheskie/purevision-2.htm'
+          link: 'https://www.ochkov.net/linzy-na-mesyats/opticheskie/ultra.htm'
         },
         {
           title: 'Оптика фаворитс',
           img: 'logo_optikafavorit',
           sale: false,
-          link: 'https://www.optika-favorit.ru/catalog/contact_lenses/replacement/104280/'
+          link: 'https://www.optika-favorit.ru/catalog/contact_lenses/replacement/104852/?sphrase_id=57513'
         },
         {
           title: 'Счастливый взгляд',
           img: 'logo_shastlivyvzglyad',
           sale: false,
-          link: 'https://happylook.ru/catalog/contact_lenses/pure_vision_2_hd_6/'
+          link: 'https://happylook.ru/catalog/contact_lenses/ultra_3/'
         },
         {
           title: 'viplinza',
           img: 'logo_viplinza',
           sale: false,
-          link: 'https://viplinza.ru/BAUSCH-LOMB/PureVision-2-HD'
+          link: 'https://viplinza.ru/BAUSCH-LOMB/ULTRA-3'
         },
         {
           title: 'wildberries',
           img: 'logo_wildberries',
           sale: false,
-          link: 'https://www.wildberries.ru/catalog/10095926/detail.aspx?targetUrl=BP'
+          link: 'https://www.wildberries.ru/catalog/116388303/detail.aspx?targetUrl=XS'
         },
         {
           title: 'zzrenie',
           img: 'logo_zzrenie',
           sale: false,
-          link: 'https://z-zrenie.ru/catalog/kontaktnye-linzy/purevision-2-6-linz/'
+          link: 'https://z-zrenie.ru/catalog/kontaktnye-linzy/ultra-3-linzy/'
         },
       ],
       phoneData: '',
@@ -490,8 +535,11 @@ export default {
     }
 
     & svg {
-      height: 19px;
+      height: 16px;
 
+      @media (--md) {
+        height: 13px;
+      }
       @media (--xs) {
         height: 10px;
       }

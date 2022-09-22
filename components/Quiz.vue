@@ -3,9 +3,9 @@
   <section v-if="finishedQuiz" ref="quiz-final" class="quiz-final animate-app-panel container">
     <div class="header__content">
       <div class="header__info">
-        <h1> PureVision<sup class="sub">®</sup> 2</h1>
-        <p>Меньше неприятных сюрпризов на дороге благодаря особой форме линз с высокой четкости зрения PureVision<sup
-            class="sub">®</sup> 2 и множество приятных – в программе лояльности Bausch + Lomb FRIENDS!<sup
+        <h1>Bausch+Lomb ULTRA<sup class="sub">®</sup></h1>
+        <p>Меньше неприятных сюрпризов на дороге благодаря особой форме линз с высокой четкости зрения Bausch+Lomb ULTRA<sup
+            class="sub">®</sup> и множество приятных – в программе лояльности Bausch + Lomb FRIENDS!<sup
             class="sub">*</sup> </p>
         <p>Зарегистрируйтесь, получите 250 приветственных баллов и обменяйте их на скидку 500 ₽<sup
             class="sub">**</sup>.</p>
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="quiz-final__img quiz-final__circle">
-        <img src="@/assets/img/final_img.jpg" alt="">
+        <img src="@/assets/img/quiz/final.png" alt="">
       </div>
     </div>
     <div class="quiz-final__references">
@@ -78,7 +78,7 @@ export default {
           titleQuestion: 'Что вы видите?',
           descQuestion: 'Это пешеход на обочине,<br> или просто дорожный знак?',
           titleAnswer: 'Это пешеход',
-          descAnswer: 'Избегайте опасных ситуаций <br> на дороге и держите все под контролем с <strong>PureVision<sup class="sub">®</sup> 2</strong>',
+          descAnswer: 'Избегайте опасных ситуаций <br> на дороге и держите все под контролем с <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong>',
           btn: {
             leftAnswer: 'Пешеход',
             rightAnswer: 'Знак',
@@ -92,7 +92,7 @@ export default {
           titleQuestion: 'Что вы видите?',
           descQuestion: 'Куда ведет этот <br>указатель?',
           titleAnswer: 'Вы чуть не пропустили <br> поворот на Ивановку',
-          descAnswer: 'Не упустите ни одной детали на дороге с <strong>PureVision<sup class="sub">®</sup> 2</strong>',
+          descAnswer: 'Не упустите ни одной детали на дороге с <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong>',
           btn: {
             leftAnswer: 'Иваново',
             rightAnswer: 'Ивановка',
@@ -106,7 +106,7 @@ export default {
           titleQuestion: 'Что вы видите?',
           descQuestion: 'Разрешает ли светофор <br>поворот направо?',
           titleAnswer: 'Здесь можно безопасно повернуть направо',
-          descAnswer: '<strong>PureVision<sup class="sub">®</sup> 2</strong> избавит вас от бликов и ореолов в условиях недостаточной освещенности, благодаря особой форме линз',
+          descAnswer: '<strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong> избавит вас от бликов и ореолов в условиях недостаточной освещенности, благодаря особой форме линз',
           btn: {
             leftAnswer: 'Разрешает',
             rightAnswer: 'Не разрешает',
@@ -184,11 +184,9 @@ export default {
   position: relative;
 
   &__img {
-    width: 50%;
-
-    @media (--2xl) {
-      width: 45%;
-    }
+    width: 56%;
+    left: -6%;
+    z-index: -1;
 
     @media (--lg) {
       width: 80%;
@@ -198,6 +196,8 @@ export default {
 
     @media (--md) {
       width: 92%;
+      left: 0;
+      z-index: 1;
     }
 
     &>img {
@@ -211,7 +211,6 @@ export default {
     font-size: 11px;
     line-height: 1.6;
     color: #8A8A8A;
-    padding-top: 60px;
 
     @media (--2xl) {
       padding-top: 20px;

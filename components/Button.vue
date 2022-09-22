@@ -122,7 +122,7 @@ export default {
   }
 
   &__icon-inline {
-    &:nth-child(1) {
+    &:first-child {
       &>svg {
         height: 35px;
 

@@ -2,13 +2,9 @@
   <section class="header">
     <div class="header__content container">
       <div class="header__info">
-        <h1> PureVision<sup class="sub">®</sup> 2</h1>
-        <p>Наверняка вы сталкивались с ситуацией, когда вы ощущали дискомфорт при вождении в условиях плохой видимости
-          или в темное время суток. Блики и ореолы вместо четкой картинки — ваши частые спутники на дороге? Линзы
-          PureVision<sup class="sub">®</sup> 2 помогут вам избежать неприятных сюрпризов. </p>
-        <strong>PureVision<sup class="sub">®</sup> 2. Особая форма линз с высокой четкостью зрения позволяет добиться ясного и
-          четкого зрения без бликов
-          и ореолов, даже в условиях низкой освещенности<sup class="sub">1</sup>.</strong>
+        <h1> Bausch+Lomb ULTRA<sup class="sub">®</sup></h1>
+        <p>Блики и ореолы — частые спутники на дороге при вождении в условиях плохой видимости или в темное время суток. Линзы Bausch+Lomb ULTRA<sup class="sub">®</sup> помогают справиться с неприятными сюрпризами.</p>
+        <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup>. Особая форма линз позволяет уменьшить затуманивание, ореолы<sup class="sub">*</sup> и блики даже в условиях слабой освещенности<sup class="sub">1</sup>.</strong>
         <div class="header__btn">
           <Button title="Подробнее" color="blue" @click.native="onModal('reg')" />
           <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')" />
@@ -18,22 +14,22 @@
         <div class="swiper swiper-main">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/swiper/swiper_1.png" alt="">
+              <img src="@/assets/img/swiper/sw_1.png" alt="">
             </div>
-            <div class="swiper-slide"><img src="@/assets/img/swiper/swiper_2.png" alt=""></div>
-            <div class="swiper-slide"><img src="@/assets/img/swiper/swiper_3.png" alt=""></div>
+            <div class="swiper-slide"><img src="@/assets/img/swiper/sw_2.png" alt=""></div>
+            <div class="swiper-slide"><img src="@/assets/img/swiper/sw_3.png" alt=""></div>
           </div>
         </div>
         <div thumbsSlider="" class="swiper swiper-help">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="@/assets/img/swiper/swiper_1.png" />
+              <img src="@/assets/img/swiper/sw_1.png" />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/swiper/swiper_2.png" />
+              <img src="@/assets/img/swiper/sw_2.png" />
             </div>
             <div class="swiper-slide">
-              <img src="@/assets/img/swiper/swiper_3.png" />
+              <img src="@/assets/img/swiper/sw_3.png" />
             </div>
           </div>
         </div>
@@ -147,10 +143,10 @@ export default {
   }
 
   &__info {
-    width: 42%;
+    width: 43%;
 
     @media (--2xl) {
-      width: 46%;
+      width: 47%;
     }
 
     @media (--xl) {
@@ -365,11 +361,11 @@ export default {
 
 .swiper {
   &-main {
-    margin-top: calc(var(--nav-h) + 20px);
+    margin-top: calc(var(--nav-h) + 90px);
     margin-bottom: 40px;
 
     @media (--2xl) {
-      margin-top: var(--nav-h);
+      margin-top: calc(var(--nav-h) + 78px);
       margin-bottom: 10px;
     }
 
@@ -379,14 +375,15 @@ export default {
 
     & .swiper-slide {
       height: auto;
-      padding-left: 17%;
+      padding-left: 7%;
 
       @media (--2xl) {
         padding-right: 5%;
+        padding-left: 2%;
       }
 
       @media (--sm) {
-        padding-left: 35%;
+        padding-left: 26%;
       }
 
       @media (--xs) {
@@ -421,7 +418,7 @@ export default {
 
     @media (--sm) {
       --w-slide-help: 70px;
-      margin-left: 35%;
+      margin-left: 26%;
     }
 
     @media (--xs) {
@@ -434,7 +431,7 @@ export default {
       border-bottom: solid 2px transparent;
       width: var(--w-slide-help);
       height: var(--w-slide-help);
-      padding: 10px 0px 10px 10px;
+      /* padding: 10px 0px 10px 10px; */
       transition: border-bottom .4s ease-in;
       cursor: pointer;
 

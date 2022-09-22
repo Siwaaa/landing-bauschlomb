@@ -12,8 +12,7 @@
                 <h3>Дорога без <br> сюрпризов</h3>
               </div>
               <div class="control-panel__desc">
-                <p>Узнайте в каких ситуациях на дороге <strong>PureVision<sup class="sub">®</sup> 2</strong> могут вам
-                  помочь. </p>
+                <p>Узнайте в каких ситуациях <br> на дороге <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong> <br> могут вам помочь. </p>
               </div>
               <div class="control-panel__btn">
                 <Button title="Поехали" color="blue" imgRight="right_m.svg" @click.native="startedQuiz = true" />
