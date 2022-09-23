@@ -4,9 +4,7 @@
     <div class="header__content">
       <div class="header__info">
         <h1>Bausch+Lomb ULTRA<sup class="sub">®</sup></h1>
-        <p>Меньше неприятных сюрпризов на дороге благодаря особой форме линз с высокой четкости зрения Bausch+Lomb ULTRA<sup
-            class="sub">®</sup> и множество приятных – в программе лояльности Bausch + Lomb FRIENDS!<sup
-            class="sub">*</sup> </p>
+        <p>Меньше неприятных сюрпризов на дороге благодаря особой форме контактных линз Bausch+Lomb ULTRA<sup class="sub">®</sup> и множество приятных — в программе лояльности Bausch + Lomb FRIENDS!<sup class="sub">*</sup> </p>
         <p>Зарегистрируйтесь, получите 250 приветственных баллов и обменяйте их на скидку 500 ₽<sup
             class="sub">**</sup>.</p>
         <div class="header__btn">
