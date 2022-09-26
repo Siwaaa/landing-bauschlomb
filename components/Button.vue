@@ -126,6 +126,10 @@ export default {
       &>svg {
         height: 35px;
 
+        @media (--650h) {
+          height: 23px;
+        }
+
         &>path {
           transition: all .4s ease-in-out;
         }

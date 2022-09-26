@@ -384,6 +384,13 @@ export default {
     flex-direction: column;
     justify-content: space-around;
 
+    @media (--650h) {
+      width: 82vw;
+      height: 700px;
+      padding: 20px;
+      justify-content: flex-start;
+    }
+
     @media (--md) {
       width: 86vw;
       height: 750px;
@@ -422,6 +429,10 @@ export default {
     margin-bottom: 3vh;
     overflow: hidden;
 
+    @media (--650h) {
+      max-height: 370px;
+    }
+
     .p-slider {
       width: 2px;
       height: 300px;
@@ -450,6 +461,10 @@ export default {
       font-weight: 400;
       font-size: 16px;
       color: #989898;
+
+      @media (--650h) {
+        font-size: 14px;
+      }
 
       @media (--lg) {
         align-items: flex-start;

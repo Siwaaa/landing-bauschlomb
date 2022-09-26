@@ -127,6 +127,11 @@ export default {
     padding: 140px 70px 40px;
     border-radius: 50%;
 
+    @media (--650h) {
+      --reg-content-w: 700px;
+      padding: 110px 70px 20px;
+    }
+
     @media (--xl) {
       --reg-content-w: 700px;
       padding: 110px 70px 20px;

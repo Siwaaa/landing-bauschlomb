@@ -189,6 +189,12 @@ export default {
       line-height: 1.2;
       color: var(--color-blue);
 
+      @media (--650h) {
+        font-size: 16px;
+      }
+      @media (--xl) {
+        font-size: 16px;
+      }
       @media (--sm) {
         font-size: 14px;
       }
@@ -277,6 +283,12 @@ export default {
     color: #989898;
     margin-top: 30px;
 
+    @media (--650h) {
+      font-size: 14px;
+    }
+    @media (--xl) {
+      font-size: 14px;
+    }
     @media (--sm) {
       font-size: 13px;
     }
