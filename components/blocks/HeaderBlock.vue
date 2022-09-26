@@ -6,7 +6,7 @@
         <p>Блики и ореолы — частые спутники на дороге при вождении в условиях плохой видимости или в темное время суток. Линзы Bausch+Lomb ULTRA<sup class="sub">®</sup> помогают справиться с неприятными сюрпризами.</p>
         <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup>. Особая форма линз позволяет уменьшить затуманивание, ореолы<sup class="sub">*</sup> и блики даже в условиях слабой освещенности<sup class="sub">1</sup>.</strong>
         <div class="header__btn">
-          <Button title="Подробнее" color="blue" @click.native="onModal('reg')" />
+          <Button title="Подробнее" color="blue" @click.native="onScrollToDetail()" />
           <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')" />
         </div>
       </div>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="header__btn-mobile">
-          <Button title="Подробнее" color="blue" @click.native="onModal('reg')" />
+          <Button title="Подробнее" color="blue" @click.native="onScrollToDetail()" />
           <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')" />
         </div>
       </div>
@@ -69,6 +69,11 @@ export default {
     onModal(component) {
       this.typeModal = component
       this.headerModal = true
+    },
+    onScrollToDetail() {
+      if (process.client) {
+        document.querySelector('#utp').scrollIntoView({block: "center", behavior: "smooth"})
+      }
     }
   },
   mounted() {
@@ -267,7 +272,7 @@ export default {
       background: url('@/assets/img/swiper/swiper_fon.png') center top / contain no-repeat;
 
       @media (--2xl) {
-        width: 61%;
+        width: 56%;
         height: 400px;
         top: calc(var(--nav-h) - 70px);
       }
@@ -378,7 +383,7 @@ export default {
       padding-left: 7%;
 
       @media (--2xl) {
-        padding-right: 5%;
+        padding-right: 20%;
         padding-left: 2%;
       }
 
@@ -405,7 +410,7 @@ export default {
     margin-left: 17%;
 
     @media (--2xl) {
-      --w-slide-help: 100px;
+      --w-slide-help: 90px;
     }
 
     @media (--650h) {

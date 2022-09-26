@@ -1,5 +1,5 @@
 <template>
-  <section class="utp">
+  <section class="utp" id="utp">
     <div class="utp__content utp__circle container">
       <div class="utp__items">
         <div class="utp__items-item"><img src="@/assets/img/utp-1.svg" alt="" />

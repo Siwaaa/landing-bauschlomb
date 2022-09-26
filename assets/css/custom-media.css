@@ -4,4 +4,4 @@
 @custom-media --md (max-width: 768px); 
 @custom-media --sm (max-width: 650px); 
 @custom-media --xs (max-width: 480px); 
-@custom-media --650h (max-height: 680px)
+@custom-media --650h (max-height: 770px)

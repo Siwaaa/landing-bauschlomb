@@ -174,6 +174,10 @@ export default {
   &__header {
     margin-bottom: 3vh;
 
+    @media (--650h) {
+      margin-bottom: 1vh;
+    }
+
     &>h2 {
       font-size: var(--fz-h3);
       font-weight: 700;

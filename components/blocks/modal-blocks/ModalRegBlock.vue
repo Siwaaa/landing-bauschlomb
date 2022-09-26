@@ -15,8 +15,8 @@
         <Button title="Зарегистрироваться" color="blue" type="submit" id="sdf"/>
         <div class="form__check">
           <input v-model="checkedRules" type="checkbox" name="agree" id="agree">
-          <label for="agree">Я ознакомлен с <a href="">условиями пользования сайтом</a>,<br>согласен с <a
-              href="">Условиями обработки персональных данных</a> <br>и <a href="">Правилами программы</a></label>
+          <label for="agree">Я ознакомлен с <a href="/site_rules.pdf" target="_blank">условиями пользования сайтом</a>,<br>согласен с <a
+            href="/politika_o_konfidencialnosty.pdf" target="_blank">Условиями обработки персональных данных</a> <br>и <a href="https://ultralinzi.ru/loyalty_program_rules.php" target="_blank">Правилами программы</a></label>
         </div>
       </form>
       <form v-else class="form" @submit.prevent="setMeCode">
@@ -128,8 +128,8 @@ export default {
     border-radius: 50%;
 
     @media (--650h) {
-      --reg-content-w: 700px;
-      padding: 110px 70px 20px;
+      --reg-content-w: 620px;
+      padding: 85px 55px 20px;
     }
 
     @media (--xl) {

@@ -42,8 +42,8 @@
         </div>
         <div class="form__check">
           <input v-model="checkedRules" type="checkbox" name="agree" id="agree">
-          <label for="agree">Я ознакомлен с <a href="">условиями пользования сайтом</a>,<br>согласен с <a
-              href="">Условиями обработки персональных данных</a> <br>и <a href="">Правилами программы</a></label>
+          <label for="agree">Я ознакомлен с <a href="/site_rules.pdf" target="_blank">условиями пользования сайтом</a>,<br>согласен с <a
+              href="/politika_o_konfidencialnosty.pdf" target="_blank">Условиями обработки персональных данных</a> <br>и <a href="https://ultralinzi.ru/loyalty_program_rules.php" target="_blank">Правилами программы</a></label>
         </div>
         <div class="form__btns">
           <Button title="Назад" color="white" type="button" imgLeft="left_small.svg" @click.native="goToAptek" />
@@ -386,9 +386,9 @@ export default {
 
     @media (--650h) {
       width: 82vw;
-      height: 700px;
+      height: 650px;
       padding: 20px;
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     @media (--md) {
