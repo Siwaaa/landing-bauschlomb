@@ -78,7 +78,7 @@ export default async function (req, res, next) {
     console.log(dataRes_2);
 
     if (dataRes_2 && dataRes_2.status === 'Success') {
-      res.writeHead(301, { Location: 'http://ultralinzi.ru/' });
+      res.writeHead(301, { Location: 'https://ultralinzi.ru/' });
     } else {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.write(JSON.stringify({ status: 'Invalid code' }));
