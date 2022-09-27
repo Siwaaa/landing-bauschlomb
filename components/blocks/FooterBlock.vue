@@ -2,13 +2,14 @@
   <footer class="footer">
     <div class="footer__content container">
       <div class="footer__social"> 
-        <a class="footer__social-item" href="#" target="_blank"
+        <a class="footer__social-item" href="https://vk.com/bauschlombrussia
+" target="_blank"
           rel="noopener noreferrer">
           <!-- <div v-html="vkLogo" /> -->
           <!-- <img src="@/assets/img/social/vk.svg" alt="vk" /> -->
         </a>
         <a class="footer__social-item"
-          href="#" target="_blank" rel="noopener noreferrer">
+          href="https://www.youtube.com/channel/UCW0eiUyn0eKe219srDRpI-Q/videos" target="_blank" rel="noopener noreferrer">
           <!-- <div v-html="youtubeLogo" /> -->
           <!-- <img src="@/assets/img/social/youtube.svg" alt="youtube" /> -->
         </a>
