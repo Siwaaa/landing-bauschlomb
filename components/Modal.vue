@@ -61,10 +61,12 @@ export default {
     onEnter() {
       this.$emit('show');
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
     },
     onBeforeLeave() {
       if (this.mask) {
         document.body.style.overflow = 'visible';
+        document.body.style.touchAction = 'auto';
       }
     },
     onLeave() {

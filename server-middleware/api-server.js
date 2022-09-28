@@ -77,12 +77,12 @@ export default async function (req, res, next) {
 
     console.log(dataRes_2);
 
-    const redirectDomain = 'https://ultralinzi.ru/'
+    const redirectDomain = 'https://ultralinzi.ru/profile/myprofile/'
 
     if (dataRes_2 && dataRes_2.status === 'Success') {
-      res.writeHead(301, { Location: redirectDomain });
-      // res.writeHead(200, { 'Content-Type': 'application/json' });
-      // res.write(JSON.stringify({ status: 'Success' }));
+      // res.writeHead(301, { Location: redirectDomain });
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.write(JSON.stringify({ status: 'Success' }));
     } else {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.write(JSON.stringify({ status: 'Invalid code' }));

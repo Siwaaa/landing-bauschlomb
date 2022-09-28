@@ -330,6 +330,8 @@ export default {
           if (process.client) {
             if (d.status != 'Success') {
               this.textError = 'Неверный код из SMS'
+            } else {
+              window.location.href = 'https://ultralinzi.ru/profile/myprofile/'
             }
           }
         })
