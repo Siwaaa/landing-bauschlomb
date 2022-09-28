@@ -1,3 +1,6 @@
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();
+
 // Scroll to #
 const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -9,6 +12,7 @@ for (let anchor of anchors) {
 
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',
+      block: "center"
     })
   })
 }

@@ -75,6 +75,12 @@ export default {
       padding: 10px;
       text-align: center;
     }
+    @media (--xs) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
 
     &>p {
       display: block;

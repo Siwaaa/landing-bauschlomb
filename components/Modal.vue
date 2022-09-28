@@ -108,6 +108,7 @@ export default {
     z-index: 999;
     pointer-events: auto;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   &__close {
@@ -351,7 +352,7 @@ export default {
     position: absolute;
     left: 0;
     bottom: 1vh;
-    color: red;
+    color: var(--color-blue);
     font-size: 12px;
 
     @media (--xs) {
@@ -360,6 +361,10 @@ export default {
       font-size: 10px;
     }
   }
+}
+
+.shadow-placeholder:focus::placeholder {
+  color: transparent;
 }
 
 .modal-enter-active,

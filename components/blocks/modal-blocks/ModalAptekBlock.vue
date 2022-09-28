@@ -52,7 +52,7 @@
       </form>
       <form v-else class="form" @submit.prevent="setMeCode">
         <div class="form__input">
-          <input v-model="codeData" class="form__input-input" type="text" placeholder="Введите код" maxlength="8"
+          <input v-model="codeData" class="form__input-input shadow-placeholder" type="text" placeholder="Введите код" maxlength="8"
             style="text-align: center">
           <span v-show="textError" class="form__error">{{ textError }}</span>
         </div>
@@ -268,7 +268,7 @@ export default {
           link: 'https://z-zrenie.ru/catalog/kontaktnye-linzy/ultra-3-linzy/'
         },
       ],
-      phoneData: '',
+      phoneData: '+7',
       codeData: '',
       textError: '',
       checkedRules: false,
@@ -494,6 +494,7 @@ export default {
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 
   /* Firefox */
   /* Hide scrollbar for Chrome, Safari and Opera */

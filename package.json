@@ -14,7 +14,6 @@
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
     "redirect-ssl": "^3.0.0",
-    "smoothscroll-polyfill": "^0.4.4",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
@@ -29,6 +28,7 @@
     "postcss-easings": "^3.0.1",
     "postcss-nested": "^5.0.6",
     "primevue": "^2.10.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^8.3.2"
   },
   "browserslist": [

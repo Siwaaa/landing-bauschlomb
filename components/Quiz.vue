@@ -21,7 +21,7 @@
     </div>
     <Modal :visible.sync="quizModal" type="reg" />
   </section>
-  <section v-else class="quiz quiz-app" :class="classForBackground" :style="styleQuizBackground">
+  <section v-else id="quiz" class="quiz quiz-app" :class="classForBackground" :style="styleQuizBackground">
     <div class="quiz__content container">
       <div class="quiz__panel">
         <div class="app-panel">
@@ -152,6 +152,11 @@ export default {
       this.$refs['quiz-final'].classList.remove('animate-app-panel')
       this.quizModal = true
     }
+  },
+  watch: {
+    finishedQuiz(newVal) {
+      if(newVal) document.querySelector('.header__go').style.display = "none"
+    }
   }
 }
 </script>
@@ -209,14 +214,6 @@ export default {
     font-size: 11px;
     line-height: 1.6;
     color: #8A8A8A;
-
-    @media (--2xl) {
-      padding-top: 20px;
-    }
-
-    @media (--lg) {
-      padding-top: 0;
-    }
 
     @media (--xs) {
       font-size: 10px;

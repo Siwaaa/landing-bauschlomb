@@ -21,7 +21,7 @@
       </form>
       <form v-else class="form" @submit.prevent="setMeCode">
         <div class="form__input">
-          <input v-model="codeData" class="form__input-input" type="text" placeholder="Введите код" maxlength="8" style="text-align: center">
+          <input v-model="codeData" class="form__input-input shadow-placeholder" type="text" placeholder="Введите код" maxlength="8" style="text-align: center">
           <span v-show="textError" class="form__error">{{  textError  }}</span>
         </div>
         <Button title="Подтвердить" color="blue" type="submit" id="sdf"/>
@@ -39,7 +39,7 @@ export default {
   name: 'ModalRegBlock',
   data() {
     return {
-      phoneData: '',
+      phoneData: '+7',
       codeData: '',
       textError: '',
       checkedRules: false,

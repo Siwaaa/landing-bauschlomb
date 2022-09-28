@@ -57,21 +57,17 @@ export default {
 
     &>h2 {
       font-weight: 700;
-      font-size: 88px;
+      font-size: 66px;
       line-height: 1.2;
       text-transform: uppercase;
       color: var(--color-blue);
       margin-bottom: 60px;
 
       @media (--2xl) {
-        font-size: 63px;
-      }
-
-      @media (--xl) {
         font-size: 52px;
       }
 
-      @media (--lg) {
+      @media (--xl) {
         font-size: 42px;
       }
 
