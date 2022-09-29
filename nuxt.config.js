@@ -1,4 +1,4 @@
-import {json} from 'body-parser'
+import { json } from 'body-parser'
 
 export default {
   target: 'server',
@@ -21,7 +21,37 @@ export default {
       { rel: 'icon', type: 'image/png', href: '/favicons/favicon-32x32.png', sizes: '32x32' },
       { rel: 'icon', type: 'image/png', href: '/favicons/favicon-16x16.png', sizes: '16x16' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }
-    ]
+    ],
+    script: [
+      // Yandex Metrika
+      { innerHTML: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");ym(90596439, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});`, type: 'text/javascript' },
+
+      // Global site tag (gtag.js) - Google Analytics
+      { src: "https://www.googletagmanager.com/gtag/js?id=UA-243555558-1", async: true },
+      { innerHTML: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-243555558-1');`, type: 'text/javascript' },
+
+      // Google tag (gtag.js)
+      { src: "https://www.googletagmanager.com/gtag/js?id=G-LYZHXLTMH6", async: true },
+      { innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LYZHXLTMH6');`, type: 'text/javascript' },
+
+      // Google Tag Manager
+      { src: "https://www.googletagmanager.com/gtag/js?id=G-LYZHXLTMH6", async: true },
+      { innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PGN398Q');`, type: 'text/javascript' },
+    ],
+    
+    noscript: [
+      // Yandex Metrika
+      { innerHTML: '<div><img src="https://mc.yandex.ru/watch/90596439" style="position:absolute; left:-9999px;" alt="" /></div>' },
+
+      // Google Tag Manager
+      {innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGN398Q"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>`, body: true}
+    ],
+    __dangerouslyDisableSanitizers: ['script', 'noscript']
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -62,7 +92,7 @@ export default {
     display: 'swap',
     families: {
       Montserrat: {
-        wght: [200,400,500,700],
+        wght: [200, 400, 500, 700],
       },
     },
     preconnect: true

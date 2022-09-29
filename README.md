@@ -23,3 +23,8 @@ $ npm run dev
 $ npm run build
 $ npm run start
 ```
+
+```sh
+# static generate
+$ npm run generate
+```

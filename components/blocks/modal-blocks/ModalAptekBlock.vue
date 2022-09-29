@@ -16,7 +16,7 @@
         </div>
         <Slider v-model="valueSlider" orientation="vertical" ref="sliderEl" />
       </div>
-      <Button title="Получить скидку" color="blue" imgLeft="sale.svg" @click.native="goToForm" />
+      <Button title="Получить скидку" color="blue" imgLeft="sale.svg" @click.native="redirectToTarget" />
       <p class="modal__aptek-desc">
         <img src="@/assets/img/sale-blue.svg" alt=""> — Онлайн магазины, участвующие в программе лояльности Bausch+Lomb
         Friends*
@@ -291,6 +291,11 @@ export default {
     goToAptek() {
       this.showAptek = true
     },
+    redirectToTarget() {
+      if (process.client) {
+        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+      }
+    },
     validateSubmit() {
       if (this.phoneData.length < 18) {
         this.textError = 'Пожалуйста, укажите верный номер телефона'
@@ -330,8 +335,6 @@ export default {
           if (process.client) {
             if (d.status != 'Success') {
               this.textError = 'Неверный код из SMS'
-            } else {
-              window.location.href = 'https://ultralinzi.ru/profile/myprofile/'
             }
           }
         })

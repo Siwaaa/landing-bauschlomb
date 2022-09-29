@@ -8,11 +8,11 @@
           </a>
         </div>
         <div class="nav__btn">
-          <Button title="Получить скидку" size="s" imgLeft="surprise.svg" imgRight="right_small.svg" @click.native="onModal" />
+          <Button title="Получить скидку" size="s" imgLeft="surprise.svg" imgRight="right_small.svg" @click.native="redirectToTarget" />
         </div>
       </div>
     </nav>
-    <Modal :visible.sync="navModal" :type="typeModal"/>
+    <!-- <Modal :visible.sync="navModal" :type="typeModal"/> -->
   </div>
 </template>
 
@@ -54,6 +54,11 @@ export default {
     },
     onModal() {
       this.navModal = true
+    },
+    redirectToTarget() {
+      if (process.client) {
+        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+      }
     }
   },
   mounted() {

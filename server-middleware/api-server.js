@@ -80,9 +80,9 @@ export default async function (req, res, next) {
     const redirectDomain = 'https://ultralinzi.ru/profile/myprofile/'
 
     if (dataRes_2 && dataRes_2.status === 'Success') {
-      // res.writeHead(301, { Location: redirectDomain });
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.write(JSON.stringify({ status: 'Success' }));
+      res.writeHead(302, { Location: redirectDomain });
+      // res.writeHead(200, { 'Content-Type': 'application/json' });
+      // res.write(JSON.stringify({ status: 'Success' }));
     } else {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.write(JSON.stringify({ status: 'Invalid code' }));

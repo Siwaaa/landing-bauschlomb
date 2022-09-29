@@ -11,10 +11,10 @@
         </div>
       </div>
       <div class="utp__btn">
-        <Button title="Получить скидку" imgRight="right_small.svg" @click.native="onModal('reg')" />
+        <Button title="Получить скидку" imgRight="right_small.svg" @click.native="redirectToTarget" />
       </div>
     </div>
-    <Modal :visible.sync="utpModal" :type="typeModal" />
+    <!-- <Modal :visible.sync="utpModal" :type="typeModal" /> -->
   </section>
 </template>
 
@@ -34,7 +34,12 @@ export default {
     onModal(component) {
       this.typeModal = component
       this.utpModal = true
-    }
+    },
+    redirectToTarget() {
+      if (process.client) {
+        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+      }
+    },
   },
 }
 </script>

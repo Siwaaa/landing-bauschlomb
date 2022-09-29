@@ -22,10 +22,10 @@
         </div>
         <div class="quiz__btn">
           <Button title="Получить скидку" size="s" imgLeft="surprise.svg" imgRight="right_small.svg"
-            @click.native="onModal" />
+            @click.native="redirectToTarget" />
         </div>
       </div>
-      <Modal :visible.sync="quizModal" :type="typeModal" />
+      <!-- <Modal :visible.sync="quizModal" :type="typeModal" /> -->
     </section>
   </transition>
 
@@ -48,7 +48,12 @@ export default {
   methods: {
     onModal() {
       this.quizModal = true
-    }
+    },
+    redirectToTarget() {
+      if (process.client) {
+        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+      }
+    },
   },
   mounted() {
   },

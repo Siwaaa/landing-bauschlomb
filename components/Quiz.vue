@@ -8,7 +8,7 @@
         <p>Зарегистрируйтесь, получите 250 приветственных баллов и обменяйте их на скидку 500 ₽<sup
             class="sub">**</sup>.</p>
         <div class="header__btn">
-          <Button title="Получить скидку" imgRight="right_small.svg" @click.native="onModal" />
+          <Button title="Получить скидку" imgRight="right_small.svg" @click.native="redirectToTarget" />
         </div>
       </div>
       <div class="quiz-final__img quiz-final__circle">
@@ -19,7 +19,7 @@
       <p>* Друзья Бауш + Ломб<br>** Приветственные баллы начисляются в течение нескольких минут после подтверждения
         e-mail (электронной почты).</p>
     </div>
-    <Modal :visible.sync="quizModal" type="reg" />
+    <!-- <Modal :visible.sync="quizModal" type="reg" /> -->
   </section>
   <section v-else id="quiz" class="quiz quiz-app" :class="classForBackground" :style="styleQuizBackground">
     <div class="quiz__content container">
@@ -151,7 +151,12 @@ export default {
     onModal() {
       this.$refs['quiz-final'].classList.remove('animate-app-panel')
       this.quizModal = true
-    }
+    },
+    redirectToTarget() {
+      if (process.client) {
+        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+      }
+    },
   },
   watch: {
     finishedQuiz(newVal) {
