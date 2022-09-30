@@ -15,7 +15,7 @@
                 <p>Узнайте в каких ситуациях <br> на дороге <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong> <br> могут вам помочь. </p>
               </div>
               <div class="control-panel__btn">
-                <Button title="Поехали" color="blue" imgRight="right_m.svg" @click.native="startedQuiz = true" />
+                <Button title="Поехали" color="blue" imgRight="right_m.svg" @click.native="startQuiz" />
               </div>
             </div>
           </div>
@@ -49,8 +49,13 @@ export default {
     onModal() {
       this.quizModal = true
     },
+    startQuiz() {
+      this.startedQuiz = true; 
+      gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Test started'});
+    },
     redirectToTarget() {
       if (process.client) {
+        gtag('event', 'send', {'event_category': 'Button', 'event_action': ' Get a discount (no surprises)'});
         window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
       }
     },

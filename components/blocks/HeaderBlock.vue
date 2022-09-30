@@ -69,10 +69,14 @@ export default {
     onModal(component) {
       this.typeModal = component
       this.headerModal = true
+
+      gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Where to buy'});
     },
     onScrollToDetail() {
       if (process.client) {
         document.querySelector('#utp').scrollIntoView({block: "center", behavior: "smooth"})
+        
+        gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Read more'});
       }
     }
   },

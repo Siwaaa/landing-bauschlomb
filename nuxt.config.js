@@ -24,7 +24,7 @@ export default {
     ],
     script: [
       // Yandex Metrika
-      { innerHTML: `(function(m,e,t,r,i,k,a){m[i]=m[i]function(){(m[i].a=m[i].a[]).push(arguments)};
+      { innerHTML: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -39,8 +39,8 @@ export default {
    `, type: 'text/javascript' },
 
       // Global site tag (gtag.js) - Google Analytics
-      // { src: "https://www.googletagmanager.com/gtag/js?id=UA-243555558-1", async: true },
-      // { innerHTML: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-243555558-1');`, type: 'text/javascript' },
+      // { src: "https://www.googletagmanager.com/gtag/js?id=UA-243578084-1", async: true },
+      // { innerHTML: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-243578084-1');`, type: 'text/javascript' },
 
       // Google tag (gtag.js)
       { src: "https://www.googletagmanager.com/gtag/js?id=G-W4DHFW3BQH", async: true },

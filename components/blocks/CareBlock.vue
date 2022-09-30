@@ -40,6 +40,12 @@ export default {
       this.productModal = product
       this.typeModal = component
       this.careModal = true
+
+      if (product == 'multiplus') {
+        gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Know more (RENU MULTIPLUS)'});
+      } else {
+        gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Know more (BIOTRUE)'});
+      }
     }
   },
 }

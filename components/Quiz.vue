@@ -139,9 +139,11 @@ export default {
   methods: {
     nextQuestion() {
       if (this.finishedQuiz) {
+        gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Test completed'});
         return true
       }
       if (this.step === 6) {
+        gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Test completed'});
         this.finishedQuiz = true
         return true
       }
