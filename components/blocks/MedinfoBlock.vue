@@ -4,12 +4,12 @@
       <div class="medinfo__content">
         <div class="nav__btn medinfo__btn">
           <Button title="Получить скидку" size="s" imgLeft="surprise.svg" imgRight="right_small.svg"
-            @click.native="onModal" />
+            @click.native="redirectToTarget" />
         </div>
         <p ref="medinfo__text">ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ</p>
       </div>
     </div>
-    <Modal :visible.sync="medModal" type="reg" />
+    <!-- <Modal :visible.sync="medModal" type="reg" /> -->
   </div>
 </template>
 
@@ -38,6 +38,11 @@ export default {
     },
     onModal() {
       this.medModal = true
+    },
+    redirectToTarget() {
+      if (process.client) {
+        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+      }
     }
   },
   mounted() {
