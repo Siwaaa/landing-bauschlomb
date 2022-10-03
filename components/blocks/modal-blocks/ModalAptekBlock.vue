@@ -157,7 +157,7 @@ export default {
           title: 'Склад линз',
           img: 'logo_skladlinz',
           sale: false,
-          link: 'https://apteka.ru/product/630ccceb50015d9c6751ad5c/'
+          link: 'https://skladlinz.ru/category/ezhemesjachnye-linzy/ultra_3_linzy_ezhemesyachnye_kontaktnye_linzy/?sphrase_id=91891'
         },
         {
           title: 'Браво оптика',
