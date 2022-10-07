@@ -267,6 +267,12 @@ export default {
           sale: false,
           link: 'https://z-zrenie.ru/catalog/kontaktnye-linzy/ultra-3-linzy/'
         },
+        {
+          title: 'optica72',
+          img: 'logo_optica72',
+          sale: false,
+          link: 'https://optica72.com/catalog/ezhemesyachnye-linzy/ultra-3-/'
+        },
       ],
       phoneData: '+7',
       codeData: '',
