@@ -41,7 +41,11 @@ export default {
     },
     redirectToTarget() {
       if (process.client) {
-        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+        document.querySelector('#quiz').scrollIntoView({block: "start", behavior: "smooth"})
+        
+        setTimeout(() => {
+          window.location.hash = 'quiz'
+        }, 1200)
       }
     }
   },

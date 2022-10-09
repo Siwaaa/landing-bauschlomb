@@ -7,7 +7,7 @@
         <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup>. Особая форма линз позволяет уменьшить затуманивание, ореолы<sup class="sub">*</sup> и блики даже в условиях слабой освещенности<sup class="sub">1</sup>.</strong>
         <div class="header__btn">
           <Button title="Подробнее" color="blue" @click.native="onScrollToDetail()" />
-          <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek')" />
+          <Button title="Где купить" imgRight="right_small.svg" @click.native="onModal('aptek');" />
         </div>
       </div>
       <div class="header__swiper header__circle">
@@ -69,18 +69,25 @@ export default {
     onModal(component) {
       this.typeModal = component
       this.headerModal = true
+      window.location.hash = 'pharmacies'
 
       gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Where to buy'});
     },
     onScrollToDetail() {
       if (process.client) {
-        document.querySelector('#utp').scrollIntoView({block: "center", behavior: "smooth"})
+        document.querySelector('#utp').scrollIntoView({block: "start", behavior: "smooth"})
         
+        setTimeout(() => {
+          window.location.hash = 'utp'
+        }, 1200)
+
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Read more'});
       }
     }
   },
   mounted() {
+    if(window.location.hash.substring(1) == 'pharmacies') this.onModal('aptek');
+
     Swiper.use([Thumbs, EffectFade])
     /* eslint-disable no-unused-vars */
     const swiperBottom = new Swiper('.swiper-help', {

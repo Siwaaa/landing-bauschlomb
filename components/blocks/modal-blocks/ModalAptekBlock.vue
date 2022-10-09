@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showAptek" ref="container-aptek" class="modal__content modal-aptek">
+  <div v-if="showAptek" ref="container-aptek" class="modal__content modal-aptek" id="pharmacies">
     <div class="modal__header" id="modalTitle">
       <h2>Выберите, где приобрести <br>
         <strong>Bausch+Lomb ULTRA<sup class="sub">®</sup></strong>
