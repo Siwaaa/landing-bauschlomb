@@ -82,6 +82,12 @@ export default {
         //   link: 'https://zdravcity.ru/p_linzy-kontaktnye-purevision2-hd-8-6-3-75-6sht-0161242.html'
         // },
         {
+          title: 'Золотое яблоко',
+          img: 'logo_zolotoeyabloko',
+          sale: false,
+          link: 'https://goldapple.ru/102317-19000104654-bc-8-5-dia-14-2-3-st'
+        },
+        {
           title: 'Яндекс Маркет',
           img: 'logo_yandexmarket-2',
           sale: false,
@@ -133,7 +139,7 @@ export default {
           title: 'Apteka.ru',
           img: 'logo_aptekaru',
           sale: false,
-          link: 'https://apteka.ru/search/?q=Bausch+%2B+Lomb+Utra'
+          link: 'https://apteka.ru/product/bauschlomb-ultra-kontaktnye-linzy-planovoj-zameny-125-3-sht-5e326e1cca7bdc000192fa2d/?q=bausch+ultra'
         },
         {
           title: 'Линз Курьер',
@@ -146,6 +152,24 @@ export default {
           img: 'logo_netoptika',
           sale: false,
           link: 'https://www.netoptika.ru/product/kontaktnye-linzy-ultra-3-linzy/'
+        },
+        {
+          title: 'Линзмастер',
+          img: 'logo_linzmaster',
+          sale: false,
+          link: 'https://www.lensmaster.ru/search/?q=ultra'
+        },
+        {
+          title: 'Линзы Питер',
+          img: 'logo_linzipiter',
+          sale: false,
+          link: 'https://kupit-linzi-spb.ru/?s=ultra&post_type=product'
+        },
+        {
+          title: 'ООО Максид (Глазастик)',
+          img: 'logo_glazastik',
+          sale: false,
+          link: 'https://glazastik.shop/kontaktnyie-linzyi/ultra?ysclid=l8vc5z91hi874393216'
         },
         {
           title: 'Линзочки',
@@ -259,7 +283,7 @@ export default {
           title: 'wildberries',
           img: 'logo_wildberries',
           sale: false,
-          link: 'https://www.wildberries.ru/catalog/116388303/detail.aspx?targetUrl=XS'
+          link: 'https://www.wildberries.ru/catalog/118021602/detail.aspx?targetUrl=EX'
         },
         {
           title: 'zzrenie',
@@ -272,6 +296,30 @@ export default {
           img: 'logo_optica72',
           sale: false,
           link: 'https://optica72.com/catalog/ezhemesyachnye-linzy/ultra-3-/'
+        },
+        {
+          title: 'ООО Оптические Товары (ЛинзА линзА)',
+          img: 'logo_linzalinza',
+          sale: false,
+          link: 'https://linzavrn.ru/goods/linzy/bauschlomb/290'
+        },
+        {
+          title: 'Первая Самарская оптика',
+          img: 'logo_samara',
+          sale: false,
+          link: 'https://optica-na-lenina.ru/catalog/kontaktnye_linzy/bausch_lomb_ultra/?sphrase_id=20485'
+        },
+        {
+          title: 'Точка Зрения',
+          img: 'logo_tochkazreniya',
+          sale: false,
+          link: 'https://t-zr.ru/catalog/lenses/item-ultra_3pk/'
+        },
+        {
+          title: 'Виктория-оптика',
+          img: 'logo_victoriya',
+          sale: false,
+          link: 'https://xn----8sbeyabld6acliyg5q.xn--p1ai/product/mkl-ultra-85'
         },
       ],
       phoneData: '+7',

@@ -12,7 +12,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#fff' },
-      { hid: 'description', name: 'description', content: 'Контактные линзы пролонгированного ношения PureVision® 2 с оптикой высокой четкости для ясного и четкого зрения без бликов и ореолов. Теперь Вы можете наслаждаться ясным и четким зрением даже в условиях низкой освещенности. Контактные линзы PureVision2 являются одними из самых тонких контактных линз на сегодняшний день, при этом они удивительно легки в использовании. Попробуйте контактные линзы Bausch+Lomb бесплатно при проверке зрения в салоне оптики' }
+      { hid: 'description', name: 'description', content: 'Особая форма линз Bausch+Lomb ULTRA®  позволяет уменьшить затуманивание, ореолы и блики даже в условиях слабой освещенности.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-192x192.png', sizes: '192x192' },
