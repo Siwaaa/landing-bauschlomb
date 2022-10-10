@@ -156,7 +156,7 @@ export default {
     },
     redirectToTarget() {
       if (process.client) {
-        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+        window.open('https://ultralinzi.ru/friend/registration/?utm_source=ultra')
       }
     },
   },

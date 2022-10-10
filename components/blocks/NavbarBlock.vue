@@ -59,11 +59,7 @@ export default {
       if (process.client) {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': ' Get a discount (header)'});
 
-        document.querySelector('#quiz').scrollIntoView({block: "start", behavior: "smooth"})
-        
-        setTimeout(() => {
-          window.location.hash = 'quiz'
-        }, 1200)
+        window.open('https://ultralinzi.ru/friend/registration/?utm_source=ultra')
       }
     }
   },

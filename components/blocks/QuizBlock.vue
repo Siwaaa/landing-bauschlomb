@@ -56,7 +56,8 @@ export default {
     redirectToTarget() {
       if (process.client) {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': ' Get a discount (no surprises)'});
-        window.location.href = 'https://ultralinzi.ru/friend/registration/?utm_source=ultra'
+        
+        window.open('https://ultralinzi.ru/friend/registration/?utm_source=ultra')
       }
     },
   },
