@@ -348,6 +348,7 @@ export default {
     redirectToTarget() {
       if (process.client) {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Get a discount (where to buy)'});
+        ym(90600398,'reachGoal','get_a_discount_where_to_buy_button')
         window.open('https://ultralinzi.ru/friend/registration/?utm_source=ultra')
       }
     },

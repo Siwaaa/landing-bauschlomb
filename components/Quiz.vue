@@ -140,10 +140,12 @@ export default {
     nextQuestion() {
       if (this.finishedQuiz) {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Test completed'});
+        ym(90600398,'reachGoal','test_completed_button');
         return true
       }
       if (this.step === 6) {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Test completed'});
+        ym(90600398,'reachGoal','test_completed_button');
         this.finishedQuiz = true
         return true
       }

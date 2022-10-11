@@ -72,6 +72,7 @@ export default {
       window.location.hash = 'pharmacies'
 
       gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Where to buy'});
+      ym(90600398,'reachGoal','where_to_buy_button');
     },
     onScrollToDetail() {
       if (process.client) {
@@ -82,6 +83,7 @@ export default {
         }, 1200)
 
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Read more'});
+        ym(90600398,'reachGoal','read_more_button');
       }
     }
   },

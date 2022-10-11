@@ -52,10 +52,12 @@ export default {
     startQuiz() {
       this.startedQuiz = true; 
       gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Test started'});
+      ym(90600398,'reachGoal','test_started_button');
     },
     redirectToTarget() {
       if (process.client) {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': ' Get a discount (no surprises)'});
+        ym(90600398,'reachGoal','get_a_discount_no_surprises_button');
         
         window.open('https://ultralinzi.ru/friend/registration/?utm_source=ultra')
       }

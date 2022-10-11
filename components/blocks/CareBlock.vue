@@ -43,8 +43,10 @@ export default {
 
       if (product == 'multiplus') {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Know more (RENU MULTIPLUS)'});
+        ym(90600398,'reachGoal','know_more_renu_multiplus_button')
       } else {
         gtag('event', 'send', {'event_category': 'Button', 'event_action': 'Know more (BIOTRUE)'});
+        ym(90600398,'reachGoal','know_more_biotrue_button')
       }
     }
   },
